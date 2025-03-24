@@ -33,7 +33,9 @@ export const ThemeContextProvider = ({ children }) => {
 export const DarkThemeContext = createContext({
     backgroundColor: "#151515",
     forgroundColor: "gray",
-    textColor: "white"
+    textColor: "white",
+    moonsvg: ''
+
 })
 
 export const DarkThemeContextProvider = ({ children }) => {
@@ -49,7 +51,8 @@ export const DarkThemeContextProvider = ({ children }) => {
 export const LightThemeContext = createContext({
     backgroundColor: "white",
     forgroundColor: "gray",
-    textColor: "black"
+    textColor: "black",
+
 })
 
 export const LightThemeContextProvider = ({ children }) => {
@@ -63,7 +66,7 @@ export const LightThemeContextProvider = ({ children }) => {
 
 export const EnglishLanguageContext = createContext({
     title: {
-        firstPart: "Hello, I'm <span class='highlight'>Mehdi</span>, an ever-improving frontend developer specializing in React, dedicated to crafting responsive, user-friendly web applications."
+        firstPart: "an ever-improving frontend developer specializing in React, dedicated to crafting responsive, user-friendly web applications."
     },
     body: "to be programed" 
 })
@@ -71,7 +74,7 @@ export const EnglishLanguageContext = createContext({
 export const EnglishLanguageContextProvider = ({ children }) => {
     const [EnglishLanguage] = useState({
         title: {
-            firstPart: "Hello, I'm <span class='highlight'>Mehdi</span>, an ever-improving frontend developer specializing in React, dedicated to crafting responsive, user-friendly web applications."
+            firstPart: "an ever-improving frontend developer specializing in React, dedicated to crafting responsive, user-friendly web applications."
         },
         body: "to be programed" 
     });

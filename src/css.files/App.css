@@ -1,8 +1,16 @@
 :root {
-  --background-color: #151515;
+  --background-color: #000000;
   --forground-color: gray;
   --color: white;
   --highlight-color: #00cee4;
+}
+
+#root {
+  width: 100%
+}
+
+.hidden {
+  display: none;
 }
 
 body {
@@ -20,57 +28,22 @@ body {
   color: var(--highlight-color);
 }
 
-/* HTML: <div class="loader"></div> */
-.loader {
-  width: 65px;
-  aspect-ratio: 1;
-  position: relative;
+#Capa_1, #Capa_2 {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: all 0.2s ease;
 }
 
-.loader:before,
-.loader:after {
-  content: "";
-  position: absolute;
-  border-radius: 50px;
-  box-shadow: 0 0 0 3px inset #fff;
-  animation: l4 2.5s infinite;
+#Capa_1:hover {
+  transform: scale(1.1);
 }
 
-.loader:after {
-  animation-delay: -1.25s;
-}
-
-@keyframes l4 {
-  0% {
-    inset: 0 35px 35px 0;
-  }
-  12.5% {
-    inset: 0 35px 0 0;
-  }
-  25% {
-    inset: 35px 35px 0 0;
-  }
-  37.5% {
-    inset: 35px 0 0 0;
-  }
-  50% {
-    inset: 35px 0 0 35px;
-  }
-  62.5% {
-    inset: 0 0 0 35px;
-  }
-  75% {
-    inset: 0 0 35px 35px;
-  }
-  87.5% {
-    inset: 0 0 35px 0;
-  }
-  100% {
-    inset: 0 35px 35px 0;
-  }
-}
 .fadein {
   animation: fadein 0.5s ease;
+}
+
+.rotate {
+  animation: rotate 0.2s ease;
 }
 
 @keyframes fadein {
@@ -81,6 +54,16 @@ body {
     opacity: 1;
   }
 }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
 @media (max-width: 768px) {
   .profile-pic {
     width: 50vw;
@@ -89,7 +72,9 @@ body {
        object-fit: cover;
     border-radius: 50%;
   }
+
 }
+
 @media (min-width: 768px) {
   .profile-pic {
     width: 40vw;
@@ -97,5 +82,31 @@ body {
     -o-object-fit: cover;
        object-fit: cover;
     border-radius: 50%;
+  }
+
+  #navbar {
+    border-bottom: 1px solid var(--forground-color);
+    padding: 1vh;
+    padding-bottom: 2vh;
+  }
+
+  .name {
+    font-size: clamp(3rem, 9vw, 9rem);
+    font-weight: bolder;
+  }
+
+  #header-name {
+    display: inline;
+    font-family: "Lobster", sans-serif;
+    color: var(--forground-color)
+  }
+
+  #navbar button {
+    background-color: var(--background-color);
+    color: var(--color);
+    border-radius: 20px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 1.2rem;
   }
 }/*# sourceMappingURL=App.css.map */
