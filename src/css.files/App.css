@@ -16,6 +16,7 @@
 body {
   background: var(--background-color);
   color: var(--color);
+  transition: all 0.2s ease;
 }
 
 * {
@@ -34,16 +35,37 @@ body {
   transition: all 0.2s ease;
 }
 
-#Capa_1:hover {
+#Capa_1:hover, #Capa_2:hover {
   transform: scale(1.1);
 }
 
-.fadein {
-  animation: fadein 0.5s ease;
+#Capa_2 {
+  transform: rotate(10deg);
 }
 
-.rotate {
-  animation: rotate 0.2s ease;
+#title-name-svg {
+  position: absolute;
+  z-index: -1;
+  width: 150px;
+  height: 150px;
+  left: 10%;
+}
+
+.fadein {
+  animation: fadein 0.2s ease;
+}
+
+.fadeout {
+  animation: fadeout 0.3s ease-in;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes fadein {
@@ -52,15 +74,6 @@ body {
   }
   to {
     opacity: 1;
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(180deg);
   }
 }
 
@@ -76,6 +89,18 @@ body {
 }
 
 @media (min-width: 768px) {
+  .h1-clamp {
+    font-size: clamp(3rem, 9vw, 7rem);
+  }
+
+  .h2-clamp {
+    font-size: clamp(1rem, 2.5vw, 2rem)
+  }
+
+  .p-clamp {
+    font-size: clamp();
+  }
+
   .profile-pic {
     width: 40vw;
     height: 40vw;
@@ -85,14 +110,17 @@ body {
   }
 
   #navbar {
-    border-bottom: 1px solid var(--forground-color);
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
     padding: 1vh;
     padding-bottom: 2vh;
   }
 
   .name {
-    font-size: clamp(3rem, 9vw, 9rem);
+    height: fit-content;
     font-weight: bolder;
+    position: relative;
+    bottom: 20px
   }
 
   #header-name {
@@ -108,5 +136,10 @@ body {
     border: none;
     box-sizing: border-box;
     font-size: 1.2rem;
+    transition: all 0.2s ease;
+  }
+
+  #title-name {
+    margin-top: 5vh
   }
 }/*# sourceMappingURL=App.css.map */
