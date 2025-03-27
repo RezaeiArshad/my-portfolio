@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
+
 const ScreenSizeContext = createContext();
 
 export const useScreenSize = () => useContext(ScreenSizeContext);
@@ -30,40 +31,6 @@ export const ThemeContextProvider = ({ children }) => {
 
 }
 
-export const DarkThemeContext = createContext({
-    backgroundColor: "#151515",
-    forgroundColor: "gray",
-    textColor: "white",
-    moonsvg: ''
-
-})
-
-export const DarkThemeContextProvider = ({ children }) => {
-    const [darkTheme] = useState(null);
-
-    return (
-        <DarkThemeContext.Provider value={{darkTheme}}>
-            {children}
-        </DarkThemeContext.Provider>
-    )
-}
-
-export const LightThemeContext = createContext({
-    backgroundColor: "white",
-    forgroundColor: "gray",
-    textColor: "black",
-
-})
-
-export const LightThemeContextProvider = ({ children }) => {
-    const [lightTheme] = useState(null);
-    return (
-        <LightThemeContext.Provider value={{lightTheme}}>
-            { children }
-        </LightThemeContext.Provider>
-    )
-}
-
 export const EnglishLanguageContext = createContext({
     title: {
         firstPart: "an ever-improving frontend developer specializing in React, dedicated to crafting responsive, user-friendly web applications."
@@ -85,3 +52,4 @@ export const EnglishLanguageContextProvider = ({ children }) => {
         </EnglishLanguageContext.Provider>
     )
 }
+

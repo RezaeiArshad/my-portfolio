@@ -3,6 +3,7 @@
   --forground-color: gray;
   --color: white;
   --highlight-color: #00cee4;
+  --vired-color: #141414
 }
 
 #root {
@@ -116,13 +117,6 @@ body {
     padding-bottom: 2vh;
   }
 
-  .name {
-    height: fit-content;
-    font-weight: bolder;
-    position: relative;
-    bottom: 20px
-  }
-
   #header-name {
     display: inline;
     font-family: "Lobster", sans-serif;
@@ -135,11 +129,94 @@ body {
     border-radius: 20px;
     border: none;
     box-sizing: border-box;
-    font-size: clamp(1rem, 1.5vw, 1.3rem);
-    transition: all 0.2s ease;
+    font-size: clamp(0.95rem, 1.5vw, 1.3rem);
+    transition: all 0.3s ease;
+  }
+
+  #navbar button:hover {
+    background-color: var(--vired-color);
+  }
+
+  #theme-button:hover {
+    background-color: var(--background-color) !important;
   }
 
   #title-name {
-    margin-top: 5vh
+    margin-top: 12vh
   }
+
+  #title-name-h1 {
+    height: fit-content;
+    font-weight: bolder;
+    position: relative;
+    bottom: 20px;
+  }
+
+  #title-name-h4 {
+    position: relative;
+    bottom: 20px;
+  }
+
+  #title-name-h4 span {
+    color: var(--forground-color)
+  }
+
+  #title-name-h5-2 span {
+    width: 1vw;
+    height: 1vw;
+    position: relative;
+    left: 2px;
+    margin-right: 10px;
+    display: inline-block;
+    background-color: limegreen;
+    border-radius: 50%;
+  }
+
+  #title-name-h5-2 span span {
+    inset: 0;
+    position: absolute;
+  }
+
+  #title-name-button-div button {
+    height: 2.5vw;
+    border-radius: 5px;
+    border: none;
+    margin-top: 2vh;
+    background-color: var(--vired-color);
+    color: var(--color);
+    transition: all 0.3s ease
+  }
+
+  #title-name-button-div button:hover {
+    background-color: rgb(41, 41, 41);
+  }
+
+  #title-name-button-div button svg {
+    margin-bottom: 3px;
+  }
+
+  #github-icon {
+    display: inline;
+    fill: var(--highlight-color);
+  }
+
+  #linkedin-icon {
+    display: inline;
+    fill: var(--highlight-color);
+  }
+
+  #email-icon {
+    display: inline;
+    fill: var(--highlight-color);
+  }
+
+  #arrow-svg {
+    fill: var(--vired-color);
+    height: 200px;
+    position: absolute;
+    left: 33%
+  }
+
+
+
 }/*# sourceMappingURL=App.css.map */
