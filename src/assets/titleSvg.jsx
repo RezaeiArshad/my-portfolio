@@ -216,9 +216,11 @@ export const arrowSvg = (
      initial={{ opacity: 0, y: 0}}
      animate={{ opacity: [0, 1, 0], y: [0, 50]}}
      transition={{ duration: 4, ease: "easeInOut",repeat: Infinity}}
-     className="col-4 mt-0 d-block ms-auto" id="arrow-svg"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-     viewBox="0 0 330 330" xml:space="preserve">
+     className="col-4 mt-0 d-block ms-auto" id="arrow-svg"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
+     viewBox="0 0 330 330" xmlSpace="preserve">
      <path
      d="M154.389 250.606l-149.996-150c-5.858-5.857-5.858-15.355 0.001-21.213 5.858-5.857 15.355-5.857 21.213 0.001l139.39 139.393 139.39-139.393c5.858-5.858 15.355-5.858 21.213-0.001 5.858 5.858 5.858 15.355 0.001 21.213l-150.004 149.999c-2.813 2.814-6.628 4.394-10.606 4.394-3.978 0-7.793-1.58-10.606-4.394z"
-     />
+      />
    </motion.svg>)
+
+

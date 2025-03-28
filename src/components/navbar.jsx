@@ -1,5 +1,6 @@
 import { useRef, useContext } from "react";
 import { ThemeContext } from "../contexts";
+import { motion } from "motion/react"
 
 
 function NavBar() {
@@ -51,7 +52,11 @@ function NavBar() {
       moonRef.current?.classList.remove("fadeout")
     }
   }
-  return <div id="navbar" className="d-flex mt-2 justify-content-between">
+  return <motion.div
+    initial={{y: -50}}
+    animate={{y: 0}}
+    transition={{duration: 0.7}}
+    id="navbar" className="d-flex mt-2 justify-content-between">
     <h1 className="col-3 text-center" id="header-name">arshad</h1>
     <div className="col-3">
       <button id="theme-button" onClick={() => changeTheme()} className="d-block ms-auto h-100">
@@ -85,16 +90,14 @@ function NavBar() {
 <svg ref={moonRef} onAnimationEnd={() => handleAnimationEnd("moon")} fill="#000000" id="Capa_2" className="hidden" width="800px" height="800px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"/></svg>
       </button>
     </div>
-    <button className="col-1">
-    lan
-  </button>
     <button className="col-1">home</button>
     <button className="col-1">projects</button>
     <div className="col-2">
+      <span></span>
       <button className="h-100 d-block w-50 me-auto">contact</button>
     </div>
     
-  </div>;
+  </motion.div>;
 }
 
 export default NavBar

@@ -3,7 +3,18 @@
   --forground-color: gray;
   --color: white;
   --highlight-color: #00cee4;
-  --vired-color: #141414
+  --vired-color: #141414;
+  --vired-color-hover: rgb(55, 55, 55);
+  --shadow-color: rgba(0, 0, 0, 0);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 #root {
@@ -18,6 +29,7 @@ body {
   background: var(--background-color);
   color: var(--color);
   transition: all 0.2s ease;
+  height: 10000px;
 }
 
 * {
@@ -42,6 +54,10 @@ body {
 
 #Capa_2 {
   transform: rotate(10deg);
+}
+
+#scroll-indicator {
+   background-color: var(--highlight-color);
 }
 
 #title-name-svg {
@@ -115,6 +131,15 @@ body {
     border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
     padding: 1vh;
     padding-bottom: 2vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    margin-top: 0 !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: var(--shadow-color);
   }
 
   #header-name {
@@ -124,7 +149,9 @@ body {
   }
 
   #navbar button {
-    background-color: var(--background-color);
+    background-color: var(--shadow-color);
+    backdrop-filter: blut(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: var(--color);
     border-radius: 20px;
     border: none;
@@ -134,15 +161,15 @@ body {
   }
 
   #navbar button:hover {
-    background-color: var(--vired-color);
+    box-shadow: 0 0 10px 1px var(--color);
   }
 
   #theme-button:hover {
-    background-color: var(--background-color) !important;
+    box-shadow: none !important;
   }
 
   #title-name {
-    margin-top: 12vh
+    margin-top: 22vh
   }
 
   #title-name-h1 {
@@ -183,12 +210,13 @@ body {
     border: none;
     margin-top: 2vh;
     background-color: var(--vired-color);
+
     color: var(--color);
     transition: all 0.3s ease
   }
 
   #title-name-button-div button:hover {
-    background-color: rgb(41, 41, 41);
+    background-color: var(--vired-color-hover);
   }
 
   #title-name-button-div button svg {
@@ -217,6 +245,57 @@ body {
     left: 33%
   }
 
-
+  #title-improving {
+    margin-top: 20vh
+  }
 
 }/*# sourceMappingURL=App.css.map */
+
+
+/* 3d animation styles */
+
+.container {
+  perspective: 800px;
+  width: 200px;
+  height: 200px;
+}
+
+.cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  opacity: 0.6;
+}
+
+.front {
+  transform: rotateY(0deg) translateZ(100px);
+  background-color: var(--hue-1-transparent);
+}
+.right {
+  transform: rotateY(90deg) translateZ(100px);
+  background-color: var(--hue-2-transparent);
+}
+.back {
+  transform: rotateY(180deg) translateZ(100px);
+  background-color: var(--hue-3-transparent);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(100px);
+  background-color: var(--hue-4-transparent);
+}
+.top {
+  transform: rotateX(90deg) translateZ(100px);
+  background-color: var(--hue-5-transparent);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+  background-color: red;
+}
