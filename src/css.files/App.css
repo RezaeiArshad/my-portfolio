@@ -223,6 +223,10 @@ body {
     margin-bottom: 3px;
   }
 
+  #title-name-button-div a {
+    text-decoration: none;
+  }
+
   #github-icon {
     display: inline;
     fill: var(--highlight-color);
