@@ -1,24 +1,36 @@
-import { useEffect, useState } from "react";
-import React from "react";
+import React, { useState, useEffect, useContext  } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "/src/css.files/App.css";
 import { ScreenSizeProvider, useScreenSize } from "./contexts";
-import {EnglishLanguageContext,EnglishLanguageContextProvider} from "./contexts";
-import { ThemeContext, ThemeContextProvider } from "./contexts";
+import { ThemeContextProvider } from "./contexts";
+import { DashContext, DashContextProvider } from "./contexts";
 import TitlePart from './components/title'  
 import NavBar from "./components/navbar";
+import Footer from "./components/footer";
+import ProjectsPart from "./components/projects";
+import ContactPart from "./components/contact";
 import { motion, useScroll } from "motion/react"
 
 
 function DashBoard() {
   const { scrollYProgress } = useScroll()
   const { isMobile } = useScreenSize();
-  const [isLoading, setIsLoading] = useState(true);
+  const { onDash } = useContext(DashContext);
+  const [ toBedisplayed, setDisplay ] = useState() 
+
   useEffect(() => {
-    if (typeof isMobile !== "undefined") {
-      setIsLoading(false);
+    if (onDash === "TitlePart") {
+      setDisplay(<TitlePart />)
     }
-  }, [isMobile]);
+    else if (onDash === "ProjectsPart") {
+      setDisplay(<ProjectsPart />)
+    }
+    else if (onDash === "ContactPart") {
+      setDisplay(<ContactPart />)
+    }
+    // to be coded
+  }, [onDash])
+
   return (
     <>
     <motion.div
@@ -31,16 +43,19 @@ function DashBoard() {
                     right: "10%",
                     height: 10,
                     originX: 0,
-                    
-
                 }}
             />
-      {isLoading ? (
-        <div className="loader"></div>
-      ) : (
+      {isMobile ? (
         <>
           <NavBar />
           <TitlePart />
+          <Footer />
+        </>
+      ) : (
+        <>
+          <NavBar />
+          {toBedisplayed}
+          <Footer />
         </>
       )}
     </>
@@ -49,15 +64,15 @@ function DashBoard() {
 
 function App() {
   return (
-    <>
-    <ThemeContextProvider>
-      <EnglishLanguageContextProvider>
-            <ScreenSizeProvider>
-              <DashBoard />
-            </ScreenSizeProvider>
-      </EnglishLanguageContextProvider>      
-    </ThemeContextProvider>
-    </>
+  <>
+    <DashContextProvider>
+      <ThemeContextProvider>
+          <ScreenSizeProvider>
+            <DashBoard />
+          </ScreenSizeProvider>     
+      </ThemeContextProvider> 
+    </DashContextProvider>
+  </>
   );
 }
 

@@ -8,11 +8,11 @@
   --shadow-color: rgba(0, 0, 0, 0);
 }
 
-.hide-scrollbar::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
 }
 
-.hide-scrollbar {
+html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -29,7 +29,6 @@ body {
   background: var(--background-color);
   color: var(--color);
   transition: all 0.2s ease;
-  height: 10000px;
 }
 
 * {
@@ -42,6 +41,14 @@ body {
   color: var(--highlight-color);
 }
 
+.text-color {
+  color: var(--color)
+}
+
+.forground {
+  color: var(--forground-color)
+}
+
 #Capa_1, #Capa_2 {
   width: 1.5rem;
   height: 1.5rem;
@@ -49,7 +56,7 @@ body {
 }
 
 #Capa_1:hover, #Capa_2:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 #Capa_2 {
@@ -58,6 +65,12 @@ body {
 
 #scroll-indicator {
    background-color: var(--highlight-color);
+}
+
+#footer {
+  margin-top: 25vh;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 #title-name-svg {
@@ -111,6 +124,10 @@ body {
   }
 
   .h2-clamp {
+    font-size: clamp(3rem, 8vw, 5rem);
+  }
+
+  .h3-clamp {
     font-size: clamp(1rem, 2.5vw, 2rem)
   }
 
@@ -150,7 +167,7 @@ body {
 
   #navbar button {
     background-color: var(--shadow-color);
-    backdrop-filter: blut(10px);
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: var(--color);
     border-radius: 20px;
@@ -182,10 +199,6 @@ body {
   #title-name-h4 {
     position: relative;
     bottom: 20px;
-  }
-
-  #title-name-h4 span {
-    color: var(--forground-color)
   }
 
   #title-name-h5-2 span {
@@ -250,18 +263,16 @@ body {
   }
 
   #title-improving {
-    margin-top: 20vh
+    margin-top: 50vh
   }
 
-}/*# sourceMappingURL=App.css.map */
-
-
-/* 3d animation styles */
+  /* 3d animation styles */
 
 .container {
   perspective: 800px;
   width: 200px;
   height: 200px;
+  position: absolute;
 }
 
 .cube {
@@ -275,31 +286,57 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: red;
   opacity: 0.6;
 }
 
 .front {
   transform: rotateY(0deg) translateZ(100px);
-  background-color: var(--hue-1-transparent);
+  background-color: transparent;
+  border: 1px solid var(--color);
 }
 .right {
   transform: rotateY(90deg) translateZ(100px);
-  background-color: var(--hue-2-transparent);
+  background-color: transparent;
+  border: 1px solid var(--color);
 }
 .back {
   transform: rotateY(180deg) translateZ(100px);
-  background-color: var(--hue-3-transparent);
+  background-color: transparent;
+  border: 1px solid var(--color);
 }
 .left {
   transform: rotateY(-90deg) translateZ(100px);
-  background-color: var(--hue-4-transparent);
+  background-color: transparent;
+  border: 1px solid var(--color);
 }
 .top {
   transform: rotateX(90deg) translateZ(100px);
-  background-color: var(--hue-5-transparent);
+  background-color: transparent;
+  border: 1px solid var(--color);
 }
+.middle {
+  transform: rotateX(-90deg) translateZ(0px);
+}
+
 .bottom {
   transform: rotateX(-90deg) translateZ(100px);
-  background-color: red;
+  background-color: transparent;
+  border: 1px solid var(--color);
 }
+
+.middle svg g {
+  stroke: var(--highlight-color);
+}
+
+#title-working {
+  margin-top: 35vh;
+}
+
+#title-working img {
+  width: 100%;
+  object-fit: contain;
+}
+
+}/*# sourceMappingURL=App.css.map */
+
+

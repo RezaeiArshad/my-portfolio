@@ -31,25 +31,16 @@ export const ThemeContextProvider = ({ children }) => {
 
 }
 
-export const EnglishLanguageContext = createContext({
-    title: {
-        firstPart: "an ever-improving frontend developer specializing in React, dedicated to crafting responsive, user-friendly web applications."
-    },
-    body: "to be programed" 
+export const DashContext = createContext({
+    onDash: "TitlePart",
+    setDash: () => {}
 })
 
-export const EnglishLanguageContextProvider = ({ children }) => {
-    const [EnglishLanguage] = useState({
-        title: {
-            firstPart: "an ever-improving frontend developer specializing in React, dedicated to crafting responsive, user-friendly web applications."
-        },
-        body: "to be programed" 
-    });
-
+export const DashContextProvider = ({ children}) => {
+    const [onDash, setDash] = useState("TitlePart")
     return (
-        <EnglishLanguageContext.Provider value={EnglishLanguage}>
+        <DashContext.Provider value={{onDash, setDash}}>
             {children}
-        </EnglishLanguageContext.Provider>
+        </DashContext.Provider>
     )
 }
-
