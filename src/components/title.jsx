@@ -85,10 +85,12 @@ function TitlePart() {
               initial={{scale: 1, opacity: 1}}
               animate={{scale: 1.5, opacity: 0}}
               transition={{duration: 1, repeat: Infinity, repeatType: "reverse"}}
+              className="green-span"
             ></motion.span><motion.span
               initial={{scale: 1, opacity: 1}}
               animate={{scale: 1.5, opacity: 0}}
               transition={{duration: 1, repeat: Infinity, repeatType: "reverse", delay: 0.5}}
+              className="green-span"
             ></motion.span>looking for an internship</h5>
           </div>
           <div id='title-name-button-div' className="col-2">
@@ -137,7 +139,7 @@ function TitlePart() {
                >working <span className="highlight">overTime</span></motion.h1>
                <motion.h3
                className="forground"
-               >is becoming a hobby</motion.h3>
+               >is becoming a hobby 🔥</motion.h3>
                <motion.h4
                initial={{opacity: 0, x: 200}}
                whileInView={{opacity: 1, x: 0}}

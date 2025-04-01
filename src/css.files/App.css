@@ -135,14 +135,6 @@ body {
     font-size: clamp();
   }
 
-  .profile-pic {
-    width: 40vw;
-    height: 40vw;
-    -o-object-fit: cover;
-       object-fit: cover;
-    border-radius: 50%;
-  }
-
   #navbar {
     border-bottom: 1px solid transparent;
     border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
@@ -162,7 +154,19 @@ body {
   #header-name {
     display: inline;
     font-family: "Lobster", sans-serif;
-    color: var(--forground-color)
+    color: var(--forground-color);
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  #header-name:hover {
+    transform: scale(1.1);
+    color: var(--color);
+    text-shadow: 1px 1px 2px var(--highlight-color);
+  }
+
+  #header-name:active {
+    transform: scale(0.9);
   }
 
   #navbar button {
@@ -179,6 +183,11 @@ body {
 
   #navbar button:hover {
     box-shadow: 0 0 10px 1px var(--color);
+  }
+
+  #navbar button:active {
+    box-shadow: 0 0 10px 2px var(--highlight-color);
+    transform: scale(0.9);
   }
 
   #theme-button:hover {
@@ -201,7 +210,7 @@ body {
     bottom: 20px;
   }
 
-  #title-name-h5-2 span {
+  .green-span {
     width: 1vw;
     height: 1vw;
     position: relative;
@@ -212,10 +221,6 @@ body {
     border-radius: 50%;
   }
 
-  #title-name-h5-2 span span {
-    inset: 0;
-    position: absolute;
-  }
 
   #title-name-button-div button {
     height: 2.5vw;
@@ -223,13 +228,20 @@ body {
     border: none;
     margin-top: 2vh;
     background-color: var(--vired-color);
-
     color: var(--color);
     transition: all 0.3s ease
   }
 
   #title-name-button-div button:hover {
     background-color: var(--vired-color-hover);
+  }
+
+  #title-name-button-div button:active {
+    transform: scale(0.9);
+  }
+
+  #title-name-button-div button:focus {
+    border: 3px solid var(--highlight-color);    
   }
 
   #title-name-button-div button svg {
@@ -255,11 +267,43 @@ body {
     fill: var(--highlight-color);
   }
 
+  #email-icon-contact {
+    display: inline;
+    fill: var(--forground-color);
+    transition: all 0.3s ease;
+    position: relative;
+    bottom: 1px;
+  }
+
+  #linkedin-icon-contact {
+    fill: var(--forground-color);
+    transition: all 0.3s ease;
+    position: relative;
+    bottom: 1px;
+  }
+
+  #github-icon-contact {
+    fill: var(--forground-color);
+    transition: all 0.3s ease;
+    position: relative;
+    bottom: 1px;
+  }
+
   #arrow-svg {
     fill: var(--vired-color);
     height: 200px;
     position: absolute;
     left: 33%
+  }
+
+  #location-svg {
+    fill: var(--forground-color);
+  }
+
+  #phone-svg {
+    fill: var(--forground-color);
+    width: 16px;
+    height: auto;
   }
 
   #title-improving {
@@ -335,6 +379,41 @@ body {
 #title-working img {
   width: 100%;
   object-fit: contain;
+}
+
+#contact {
+  margin-top: 18vh;
+}
+
+#contact-profile {
+  border: 2px solid var(--forground-color);
+  border-radius: 25px;
+  background-color: var(--shadow-color);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+#contact-profile img {
+  border-radius: 50%;
+}
+
+#tsparticles {
+  position: fixed;
+  z-index: -2;
+}
+
+#email-contact {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+#email-contact:hover, #email-contact:focus {
+  color: var(--highlight-color);
+}
+
+#contact-profile-name {
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
 }
 
 }/*# sourceMappingURL=App.css.map */
