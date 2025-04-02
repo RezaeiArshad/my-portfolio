@@ -16,7 +16,7 @@ function DashBoard() {
   const { scrollYProgress } = useScroll()
   const { isMobile } = useScreenSize();
   const { onDash } = useContext(DashContext);
-  const [ toBedisplayed, setDisplay ] = useState() 
+  const [ toBedisplayed, setDisplay ] = useState(<TitlePart />);
 
   useEffect(() => {
     if (onDash === "TitlePart") {
@@ -28,23 +28,25 @@ function DashBoard() {
     else if (onDash === "ContactPart") {
       setDisplay(<ContactPart />)
     }
-    // to be coded
   }, [onDash])
+
 
   return (
     <>
-    <motion.div
-                id="scroll-indicator"
-                style={{
-                    scaleX: scrollYProgress,
-                    position: "fixed",
-                    bottom: 0,
-                    left: "10%",
-                    right: "10%",
-                    height: 10,
-                    originX: 0,
-                }}
-            />
+      {!isMobile && (
+        <motion.div
+        id="scroll-indicator"
+        style={{
+          scaleX: scrollYProgress,
+          position: "fixed",
+          bottom: 0,
+          left: "10%",
+          right: "10%",
+          height: 10,
+          originX: 0,
+               }}
+      />
+      )}
       {isMobile ? (
         <>
           <NavBar />

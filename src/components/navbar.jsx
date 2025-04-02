@@ -32,7 +32,7 @@ function NavBar() {
     if (element === "sun" && theme === "light") {
       sunRef.current?.classList.remove("fadeout")
       sunRef.current?.classList.add("hidden")
-      root.style.setProperty('--background-color', 'white')
+      root.style.setProperty('--background-color', '#dfdfdf')
       root.style.setProperty('--forground-color', 'gray')
       root.style.setProperty('--color', 'black')
       root.style.setProperty('--highlight-color', '#00cee4')

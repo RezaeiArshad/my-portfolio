@@ -1,0 +1,9 @@
+@media (min-width: 768px) {
+    #projects-div {
+        margin-top: 20vh;
+    }
+
+    .projects-project {
+        border: 1px solid var(--color);
+    }
+}

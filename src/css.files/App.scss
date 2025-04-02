@@ -1,81 +1,107 @@
-  :root {
-    --background-color: #151515;
+:root {
+    --background-color: #000000;
     --forground-color: gray;
     --color: white;
     --highlight-color: #00cee4;
+    --vired-color: #141414;
+    --vired-color-hover: rgb(55, 55, 55);
+    --shadow-color: rgba(0, 0, 0, 0);
   }
-
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  #root {
+    width: 100%
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
   body {
     background: var(--background-color);
     color: var(--color);
+    transition: all 0.2s ease;
   }
-
+  
   * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
   }
-
+  
   .highlight {
-    color: var(--highlight-color)
+    color: var(--highlight-color);
   }
-
-  /* HTML: <div class="loader"></div> */
-  .loader {
-    width: 65px;
-    aspect-ratio: 1;
-    position: relative;
+  
+  .text-color {
+    color: var(--color)
   }
-  .loader:before,
-  .loader:after {
-    content: "";
+  
+  .forground {
+    color: var(--forground-color)
+  }
+  
+  #Capa_1, #Capa_2 {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: all 0.2s ease;
+  }
+  
+  #Capa_1:hover, #Capa_2:hover {
+    transform: scale(1.2);
+  }
+  
+  #Capa_2 {
+    transform: rotate(10deg);
+  }
+  
+  #scroll-indicator {
+     background-color: var(--highlight-color);
+  }
+  
+  #footer {
+    margin-top: 25vh;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  #title-name-svg {
     position: absolute;
-    border-radius: 50px;
-    box-shadow: 0 0 0 3px inset #fff;
-    animation: l4 2.5s infinite;
-  }
-  .loader:after {
-    animation-delay: -1.25s;
-  }
-  @keyframes l4 {
-    0% {
-      inset: 0 35px 35px 0;
-    }
-    12.5% {
-      inset: 0 35px 0 0;
-    }
-    25% {
-      inset: 35px 35px 0 0;
-    }
-    37.5% {
-      inset: 35px 0 0 0;
-    }
-    50% {
-      inset: 35px 0 0 35px;
-    }
-    62.5% {
-      inset: 0 0 0 35px;
-    }
-    75% {
-      inset: 0 0 35px 35px;
-    }
-    87.5% {
-      inset: 0 0 35px 0;
-    }
-    100% {
-      inset: 0 35px 35px 0;
-    }
+    z-index: -1;
+    width: 150px;
+    height: 150px;
+    left: 10%;
   }
   
   .fadein {
-    animation: fadein 0.5s ease;
+    animation: fadein 0.2s ease;
+  }
+  
+  .fadeout {
+    animation: fadeout 0.3s ease-in;
+  }
+  
+  @keyframes fadeout {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
   }
   
   @keyframes fadein {
     from {
       opacity: 0;
     }
-
     to {
       opacity: 1;
     }
@@ -85,16 +111,320 @@
     .profile-pic {
       width: 50vw;
       height: 50vw;
-      object-fit: cover;
+      -o-object-fit: cover;
+         object-fit: cover;
       border-radius: 50%;
     }
+  
   }
   
   @media (min-width: 768px) {
-    .profile-pic {
-      width: 40vw;
-      height: 40vw;
-      object-fit: cover;
+    .h1-clamp {
+      font-size: clamp(3rem, 9vw, 7rem);
+    }
+  
+    .h2-clamp {
+      font-size: clamp(3rem, 8vw, 5rem);
+    }
+  
+    .h3-clamp {
+      font-size: clamp(1rem, 2.5vw, 2rem)
+    }
+  
+    #navbar {
+      border-bottom: 1px solid transparent;
+      border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
+      padding: 1vh;
+      padding-bottom: 2vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      margin-top: 0 !important;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background-color: var(--shadow-color);
+    }
+  
+    #header-name {
+      display: inline;
+      font-family: "Lobster", sans-serif;
+      color: var(--forground-color);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+  
+    #header-name:hover {
+      transform: scale(1.1);
+      color: var(--color);
+      text-shadow: 1px 1px 2px var(--highlight-color);
+    }
+  
+    #header-name:active {
+      transform: scale(0.9);
+    }
+  
+    #navbar button {
+      background-color: var(--shadow-color);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: var(--color);
+      border-radius: 20px;
+      border: none;
+      box-sizing: border-box;
+      font-size: clamp(0.95rem, 1.5vw, 1.3rem);
+      transition: all 0.3s ease;
+    }
+  
+    #navbar button:hover {
+      box-shadow: 0 0 10px 1px var(--color);
+    }
+  
+    #navbar button:active {
+      box-shadow: 0 0 10px 2px var(--highlight-color);
+      transform: scale(0.9);
+    }
+  
+    #theme-button:hover {
+      box-shadow: none !important;
+    }
+  
+    #title-name {
+      margin-top: 22vh
+    }
+  
+    #title-name-h1 {
+      height: fit-content;
+      font-weight: bolder;
+      position: relative;
+      bottom: 20px;
+    }
+  
+    #title-name-h4 {
+      position: relative;
+      bottom: 20px;
+    }
+  
+    .green-span {
+      width: 1vw;
+      height: 1vw;
+      position: relative;
+      left: 2px;
+      margin-right: 10px;
+      display: inline-block;
+      background-color: limegreen;
       border-radius: 50%;
     }
+  
+  
+    #title-name-button-div button {
+      height: 2.5vw;
+      border-radius: 5px;
+      border: none;
+      margin-top: 2vh;
+      background-color: var(--vired-color);
+      color: var(--color);
+      transition: all 0.3s ease
+    }
+  
+    #title-name-button-div button:hover {
+      background-color: var(--vired-color-hover);
+    }
+  
+    #title-name-button-div button:active {
+      transform: scale(0.9);
+    }
+  
+    #title-name-button-div button:focus {
+      border: 3px solid var(--highlight-color);    
+    }
+  
+    #title-name-button-div button svg {
+      margin-bottom: 3px;
+    }
+  
+    #title-name-button-div a {
+      text-decoration: none;
+    }
+  
+    #github-icon {
+      display: inline;
+      fill: var(--highlight-color);
+    }
+  
+    #linkedin-icon {
+      display: inline;
+      fill: var(--highlight-color);
+    }
+  
+    #email-icon {
+      display: inline;
+      fill: var(--highlight-color);
+    }
+  
+    #email-icon-contact {
+      display: inline;
+      fill: var(--forground-color);
+      transition: all 0.3s ease;
+      position: relative;
+      bottom: 1px;
+    }
+  
+    #linkedin-icon-contact {
+      fill: var(--forground-color);
+      transition: all 0.3s ease;
+      position: relative;
+      bottom: 1px;
+      transition: all 0.2s ease;
+    }
+  
+    #linkedin-icon-contact:hover, #linkedin-icon-contact:active {
+      transform: scale(1.1);
+      fill: var(--highlight-color);
+    }
+  
+    #github-icon-contact {
+      fill: var(--forground-color);
+      transition: all 0.3s ease;
+      position: relative;
+      bottom: 1px;
+      transition: all 0.2s ease;
+    }
+  
+    #github-icon-contact:hover, #github-icon-contact:active {
+      transform: scale(1.1);
+      fill: var(--highlight-color);
+    }
+  
+    #arrow-svg {
+      fill: var(--vired-color);
+      height: 200px;
+      position: absolute;
+      left: 33%
+    }
+  
+    #location-svg {
+      fill: var(--forground-color);
+    }
+  
+    #phone-svg {
+      fill: var(--forground-color);
+      width: 16px;
+      height: auto;
+    }
+  
+    #title-improving {
+      margin-top: 50vh
+    }
+  
+    /* 3d animation styles */
+  
+  .container {
+    perspective: 800px;
+    width: 200px;
+    height: 200px;
+    position: absolute;
   }
+  
+  .cube {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  
+  .side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+  }
+  
+  .front {
+    transform: rotateY(0deg) translateZ(100px);
+    background-color: transparent;
+    border: 1px solid var(--color);
+  }
+  .right {
+    transform: rotateY(90deg) translateZ(100px);
+    background-color: transparent;
+    border: 1px solid var(--color);
+  }
+  .back {
+    transform: rotateY(180deg) translateZ(100px);
+    background-color: transparent;
+    border: 1px solid var(--color);
+  }
+  .left {
+    transform: rotateY(-90deg) translateZ(100px);
+    background-color: transparent;
+    border: 1px solid var(--color);
+  }
+  .top {
+    transform: rotateX(90deg) translateZ(100px);
+    background-color: transparent;
+    border: 1px solid var(--color);
+  }
+  .middle {
+    transform: rotateX(-90deg) translateZ(0px);
+  }
+  
+  .bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+    background-color: transparent;
+    border: 1px solid var(--color);
+  }
+  
+  .middle svg g {
+    stroke: var(--highlight-color);
+  }
+  
+  #title-working {
+    margin-top: 35vh;
+  }
+  
+  #title-working img {
+    width: 100%;
+    object-fit: contain;
+  }
+  
+  #contact {
+    margin-top: 18vh;
+  }
+  
+  #contact-profile {
+    border: 2px solid var(--forground-color);
+    border-radius: 25px;
+    background-color: var(--shadow-color);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+  
+  #contact-profile img {
+    border-radius: 50%;
+  }
+  
+  #tsparticles {
+    position: fixed;
+    z-index: -2;
+  }
+  
+  #email-contact {
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  #email-contact:hover, #email-contact:focus {
+    color: var(--highlight-color);
+  }
+  
+  #contact-profile-name {
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
+  }
+  
+  }
+  
+  
+  // just tryin a comment

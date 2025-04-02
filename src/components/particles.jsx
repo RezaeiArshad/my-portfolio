@@ -112,7 +112,7 @@ const ParticlesComponent = () => {
         id="tsparticles"
         particlesLoaded={particlesLoaded}
         options={options}
-        aria-hidden= "true"
+        ariaHidden= "true"
       />
     );
   }
