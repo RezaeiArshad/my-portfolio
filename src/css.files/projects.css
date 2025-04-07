@@ -1,16 +1,29 @@
+:root {
+
+}
+
+#tsparticles-snow {
+  position: absolute;
+  z-index: -4;
+}
+
 @media (min-width: 768px) {
     #projects-div {
         margin-top: 20vh;
     }
 
     .projects-project {
-        border: none;
         border-radius: 15px;
-        background-color: var(--vired-color);
+        background-color: var(--shadow-color);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
         padding-bottom: 20px;
+        border: 1px solid var(--vired-color);
         cursor: pointer;
         transition: all 0.3s ease;
         position: relative;
+        z-index: 3;
+        height: 100%;
     }
 
     .projects-project:hover {
@@ -19,11 +32,12 @@
 
     .projects-project-img {
         width: 90%;
-        height: 250px;
+        height: 20vh;
         object-fit: cover;
         margin-left: 5%;
         margin-top: 5%;
         border-radius: 15px;
+        opacity: 0.8;
     }
 
     .projects-project h4 {
@@ -32,7 +46,7 @@
     }
 
     .projects-project p {
-        margin: -10px 0 0 5%;
+        margin-left: 5%;
     }
 
     .projects-watch-svg {
@@ -50,11 +64,45 @@
         fill: var(--highlight-color);
         width: 15%;
         height: auto;
-        margin: 40% 0 0 calc(50% - 7.5%);
+        margin: 35% 0 0 calc(50% - 7.5%);
         transition: all 0.3s ease-out;
     }
 
     .projects-watch-svg svg:hover {
         fill: red;
+    }
+
+    #contact-side-div {
+        position: fixed;
+        right: 8%;
+    }
+
+    #contact-side-div .highlight {
+        margin-bottom: -5px;
+    }
+
+    #improving-svg {
+        position: absolute;
+        fill: var(--the-red);
+        width: 100px;
+        height: auto;
+        top: 10%;
+        right: 80%;
+        z-index: -3;
+    }
+
+    #github-icon-projects {
+        fill: var(--forground-color);
+        margin-left: -15px;
+        margin-right: -1px;
+        width: 19px;
+        transition: all 0.3s ease;
+        position: relative;
+        top: 1px;
+    }
+
+    #github-icon-projects:hover {
+        fill: red;
+        position: relative;
     }
 }

@@ -84,7 +84,8 @@
     color: var(--color);
     box-sizing: border-box;
     transition: all 0.3s ease;
-    font-size: 1.3rem;
+    font-size: clamp(1rem , 1.5vw, 1.3rem);
+    resize: none;
   }    
 
   .contact-form-input:hover, .contact-form-input:active {

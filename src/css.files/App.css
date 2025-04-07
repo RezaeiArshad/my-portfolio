@@ -6,6 +6,8 @@
   --vired-color: #141414;
   --vired-color-hover: rgb(55, 55, 55);
   --shadow-color: rgba(0, 0, 0, 0);
+  --the-red: red;
+  --if-theme: invert(100%) sepia(3%) saturate(7488%) hue-rotate(267deg) brightness(120%) contrast(99%);
 }
 
 ::-webkit-scrollbar {
@@ -73,13 +75,7 @@ body {
   margin-bottom: 30px;
 }
 
-#title-name-svg {
-  position: absolute;
-  z-index: -1;
-  width: 150px;
-  height: 150px;
-  left: 10%;
-}
+
 
 .fadein {
   animation: fadein 0.2s ease;
@@ -124,6 +120,9 @@ body {
   .h3-clamp {
     font-size: clamp(1rem, 2.5vw, 2rem);
   }
+  .h4-clamp {
+    font-size: clamp(0.9rem , 2vw, 1.8rem);
+  }
   .p-clamp {
     font-size: clamp(0.8rem, 1.5vw, 1rem);
   }
@@ -131,7 +130,7 @@ body {
   #navbar {
     border-bottom: 1px solid transparent;
     -o-border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
-       border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
+    border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
     padding: 1vh;
     padding-bottom: 2vh;
     position: fixed;
@@ -140,8 +139,8 @@ body {
     width: 100%;
     z-index: 10;
     margin-top: 0 !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     background-color: var(--shadow-color);
   }
   #header-name {
@@ -190,6 +189,16 @@ body {
     position: relative;
     bottom: 20px;
   }
+
+  #title-name-svg {
+    position: absolute;
+    z-index: -1;
+    width: 150px;
+    height: 150px;
+    left: 10%;
+    fill: var(--vired-color)
+  }
+
   #title-name-h4 {
     position: relative;
     bottom: 20px;
@@ -204,13 +213,19 @@ body {
     background-color: limegreen;
     border-radius: 50%;
   }
+
+  #title-name-button-div {
+    position: relative;
+    top: 13vh;
+  }
+
   #title-name-button-div button {
     height: 2.5vw;
     border-radius: 5px;
     border: none;
     margin-top: 2vh;
-    background-color: var(--vired-color);
     color: var(--color);
+    background-color: var(--vired-color);
     transition: all 0.3s ease;
   }
   #title-name-button-div button:hover {
@@ -341,14 +356,7 @@ body {
   .middle svg g {
     stroke: var(--highlight-color);
   }
-  #title-working {
-    margin-top: 35vh;
-  }
-  #title-working img {
-    width: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
-  }
+
   #contact {
     margin-top: 18vh;
   }

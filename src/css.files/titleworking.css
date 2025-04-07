@@ -1,0 +1,91 @@
+@media (min-width: 768px) {
+  #title-working {
+    margin-top: 35vh;
+  }
+
+  #ffc-png {
+    filter: var(--if-theme);
+    width: 50px;
+    display: inline;
+    height: 50px;
+    -o-object-fit: contain;
+    object-fit: contain;
+  }
+
+  #title-working-ffc {
+    position: relative;
+  }
+
+  #title-working-ffc h4 {
+    display: inline;
+  }
+
+  #title-working-ffc a {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 3%;
+  }
+
+  #working-svg {
+    fill: var(--vired-color);
+    position: absolute;
+    top: 0;
+    left: -5%;
+    z-index: -1;
+    width: auto;
+    height: 110%;
+  }
+
+  #javascript-svg {
+    width: 25px;
+    height: auto;
+    fill: var(--color);
+    position: relative;
+    left: -2.1px;
+    transition: all 0.3s ease;
+  }
+
+  #globe-svg {
+    fill: var(--color);
+    width: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 1px;
+    transition: all 0.3s ease;
+  }
+
+  #libraries-svg {
+    fill: var(--color);
+    width: 22px;
+    height: auto;
+    transition: all 0.3s ease;
+  }
+
+  #title-working-ffc a svg:hover, #title-working-ffc a svg:active {
+    fill: var(--highlight-color);
+  }
+
+  #codewars-svg {
+    fill: red;
+    width: 45px;
+    height: auto;
+    position: relative;
+    bottom: 2px;
+    left: -5px;
+  }
+
+  #codewars-svg-little {
+    transition: all 0.3s ease;
+    width: 28px;
+    position: relative;
+    bottom: 2px;
+    left: -3px;
+  }
+
+  #codewars-svg-little path:nth-child(1) {
+    fill: red;
+  }
+  .other-path{
+    fill: var(--background-color);
+  }
+}

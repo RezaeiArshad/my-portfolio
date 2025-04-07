@@ -2,10 +2,14 @@ import ParticlesComponent from './particles.jsx'
 import { useScreenSize } from '../contexts';
 import { motion } from 'motion/react';
 import ContactForm from './contactform.jsx';
+import imageMe from "../../public/page-pictures/photo1742210095.jpeg"
+import { ThemeContext } from '../contexts';
+import { useContext } from 'react';
 
 
 function ContactPart() {
 const {isMobile} = useScreenSize()
+const {theme} = useContext(ThemeContext)
 
     return (
         <>{isMobile ? <div><h1>ismobile</h1></div> : 
@@ -23,21 +27,23 @@ const {isMobile} = useScreenSize()
               animate={{opacity: 1, x: 0}}
               transition={{duration: 1}}
               id="contact-profile" className="offset-md-2 col-3">
-              <img alt='A picture of me' style={{opacity: "0.8"}} src='\page-pictures\photo1742210095.jpeg' className='col-8 offset-md-2 mt-4' />
-              <div id="contact-profile-name" className="offset-md-2 col-8 mt-3">
+              <img alt='A picture of me' style={{opacity: `${theme === "dark" ? "0.8" : "1"}`}} src={imageMe} 
+                className='col-lg-8 offset-lg-2 col-10 offset-1 mt-4' />
+              <div id="contact-profile-name" 
+                className="col-lg-8 offset-lg-2 offset-1 col-10 mt-3">
               <h4>Mehdi Rezaei</h4>
               <h6 className="forground mb-3">RezaeiArshad</h6>
               </div>
-              <h6 className="mt-3 mb-3 offset-md-2">looking for a job <span style={{position: "relative", top: 2}} className="green-span">
+              <h6 className="mt-3 mb-3 offset-1 offset-lg-2">looking for a job <span style={{position: "relative", top: 2}} className="green-span">
                 <motion.span 
                   initial={{scale: 1, opacity: 1}}
                   animate={{scale: 1.7, opacity: 0}}
                   transition={{duration: 1, repeat: Infinity, repeatType: "reverse"}}
                   style={{inset: 0, position: "absolute"}} className="green-span"></motion.span></span></h6>
-              <h6 className="offset-md-2 mt-2 forground"><svg id="location-svg" viewBox="0 0 16 16" version="1.1" width="16" height="16" ariaHidden="true"><path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132v-.001a5 5 0 1 0-7.072 7.072L8 14.07l3.536-3.534a5 5 0 0 0 0-7.072ZM8 9a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 9Z"></path></svg> Iran.kermanshah</h6>
-              <a className='offset-md-2 forground d-block' id="email-contact" href="mailto:mehdirezaeiarshad@gmail.com" target='_blank'>
+              <h6 className="offset-lg-2 offset-1 mt-2 forground"><svg id="location-svg" viewBox="0 0 16 16" version="1.1" width="16" height="16" ariaHidden="true"><path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132v-.001a5 5 0 1 0-7.072 7.072L8 14.07l3.536-3.534a5 5 0 0 0 0-7.072ZM8 9a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 9Z"></path></svg> Iran.kermanshah</h6>
+              <a className='offset-lg-2 offset-1 forground d-block' id="email-contact" href="mailto:mehdirezaeiarshad@gmail.com" target='_blank'>
               <svg id="email-icon-contact"  stroke="currentColor"  strokeWidth="0" viewBox="0 0 512 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg> mehdirezaeiarshad</a>
-              <div className="d-block col-4 offset-md-5 mb-3 mt-2">
+              <div className="d-block col-4 offset-4 offset-lg-5 mb-3 mt-2">
               <a href='https://www.linkedin.com/in/mehdi-rezaeiarshad-b33975326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' target='_blank'>
               <svg id="linkedin-icon-contact" stroke="currentColor" strokeWidth="0" viewBox="0 0 448 512" color="#3CCF91" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a>
               <a className="ms-3" href='https://github.com/rezaeiarshad' target='_blank'>

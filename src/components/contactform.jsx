@@ -73,10 +73,10 @@ export default function ContactForm() {
             </div>  
             <div className="mt-4 col-11 d-block mx-auto">
               <div className="row">
-                <div className="col-4 d-inline">
+                <div className="col-lg-5 col-6 d-inline">
                   <button className="p-clamp" id="contact-form-button" type="submit">send message</button>
                 </div>
-                <div className="col-7 d-flex justify-content-end">
+                <div className="col-6 d-flex justify-content-end">
                  {result} 
                 </div>
               </div>
