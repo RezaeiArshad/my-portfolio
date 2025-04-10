@@ -1,0 +1,8 @@
+#preloader {
+  width:fit-content;
+  margin: 30vh auto 0 auto;
+}
+
+.preloader-svg {
+  height: auto;
+}

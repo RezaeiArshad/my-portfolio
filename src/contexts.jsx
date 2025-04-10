@@ -44,3 +44,17 @@ export const DashContextProvider = ({ children}) => {
         </DashContext.Provider>
     )
 }
+
+export const NavbarMenuContext = createContext({
+    navbarButtonStatus: "inactive",
+    setNavbarButtonStatus: () => {}
+})
+
+export const NavBarMenuProvider = ({ children }) => {
+    const [navbarButtonStatus, setNavbarButtonStatus] = useState("inactive")
+    return (
+        <NavbarMenuContext.Provider value={{navbarButtonStatus, setNavbarButtonStatus}}>
+            {children}
+        </NavbarMenuContext.Provider>
+    )
+}

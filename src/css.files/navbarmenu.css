@@ -1,0 +1,50 @@
+#navbar-menu {
+    position: absolute;
+    height: 100vh;
+    background-color: var(--vired-color);
+    width: 50vw;
+    z-index: 3;
+    right: 0;
+    top:0;
+}
+
+#navbar-menu-rest {
+    width: 50vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background-color: var(--vired-color);
+    backdrop-filter: blur(10px);
+}
+
+#navbar-menu button {
+    background-color: var(--vired-color);
+    color: var(--color);
+    width: 70%;
+    height: 5vh;
+    min-height: 36px;
+    display: block;
+    margin: 10% 0 10% 10%;
+    border: 1px solid var(--forground-color);
+    border-radius: 20px 1px;
+    transition: all 0.3s ease;
+}
+
+#navbar-menu button:nth-of-type(1) {
+    margin-top: 10vh;
+}
+
+#navbar-menu button:hover {
+    background-color: var(--vired-color-hover);
+    transform: scale(1.05);
+}
+
+
+
+#navbar-menu p {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

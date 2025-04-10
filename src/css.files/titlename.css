@@ -1,0 +1,78 @@
+@media (min-width: 768px) {
+    #title-name {
+        margin-top: 22vh;
+      }
+      #title-name-h1 {
+        height: -moz-fit-content;
+        height: fit-content;
+        font-weight: bolder;
+        position: relative;
+        bottom: 20px;
+      }
+    
+      #title-name-svg {
+        position: absolute;
+        z-index: -1;
+        width: 150px;
+        height: 150px;
+        left: 10%;
+        fill: var(--vired-color)
+      }
+    
+      #title-name-h4 {
+        position: relative;
+        bottom: 20px;
+      }
+      .green-span {
+        width: 1vw;
+        height: 1vw;
+        position: relative;
+        left: 2px;
+        margin-right: 10px;
+        display: inline-block;
+        background-color: limegreen;
+        border-radius: 50%;
+      }
+    
+      #title-name-button-div {
+        position: relative;
+        top: 13vh;
+      }
+    
+      #title-name-button-div button {
+        height: 2.5vw;
+        border-radius: 5px;
+        border: none;
+        margin-top: 2vh;
+        color: var(--color);
+        background-color: var(--vired-color);
+        transition: all 0.3s ease;
+      }
+      #title-name-button-div button:hover {
+        background-color: var(--vired-color-hover);
+      }
+      #title-name-button-div button:active {
+        transform: scale(0.9);
+      }
+      #title-name-button-div button:focus {
+        border: 3px solid var(--highlight-color);
+      }
+      #title-name-button-div button svg {
+        margin-bottom: 3px;
+      }
+      #title-name-button-div a {
+        text-decoration: none;
+      }
+      #github-icon {
+        display: inline;
+        fill: var(--highlight-color);
+      }
+      #linkedin-icon {
+        display: inline;
+        fill: var(--highlight-color);
+      }
+      #email-icon {
+        display: inline;
+        fill: var(--highlight-color);
+      }
+}

@@ -102,13 +102,12 @@ body {
   }
 }
 @media (max-width: 768px) {
-  .profile-pic {
-    width: 50vw;
-    height: 50vw;
-    -o-object-fit: cover;
-    object-fit: cover;
-    border-radius: 50%;
+
+  .h2-clamp {
+    font-size: clamp(2.5rem, 7vw, 3.2rem);
   }
+
+
 }
 @media (min-width: 768px) {
   .h1-clamp {
@@ -127,134 +126,7 @@ body {
     font-size: clamp(0.8rem, 1.5vw, 1rem);
   }
 
-  #navbar {
-    border-bottom: 1px solid transparent;
-    -o-border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
-    border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
-    padding: 1vh;
-    padding-bottom: 2vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    margin-top: 0 !important;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    background-color: var(--shadow-color);
-  }
-  #header-name {
-    display: inline;
-    font-family: "Lobster", sans-serif;
-    color: var(--forground-color);
-    transition: all 0.2s ease;
-    cursor: pointer;
-  }
-  #header-name:hover {
-    transform: scale(1.1);
-    color: var(--color);
-    text-shadow: 1px 1px 2px var(--highlight-color);
-  }
-  #header-name:active {
-    transform: scale(0.9);
-  }
-  #navbar button {
-    background-color: var(--shadow-color);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: var(--color);
-    border-radius: 20px;
-    border: none;
-    box-sizing: border-box;
-    font-size: clamp(0.95rem, 1.5vw, 1.3rem);
-    transition: all 0.3s ease;
-  }
-  #navbar button:hover {
-    box-shadow: 0 0 10px 1px var(--color);
-  }
-  #navbar button:active {
-    box-shadow: 0 0 10px 2px var(--highlight-color);
-    transform: scale(0.9);
-  }
-  #theme-button:hover {
-    box-shadow: none !important;
-  }
-  #title-name {
-    margin-top: 22vh;
-  }
-  #title-name-h1 {
-    height: -moz-fit-content;
-    height: fit-content;
-    font-weight: bolder;
-    position: relative;
-    bottom: 20px;
-  }
 
-  #title-name-svg {
-    position: absolute;
-    z-index: -1;
-    width: 150px;
-    height: 150px;
-    left: 10%;
-    fill: var(--vired-color)
-  }
-
-  #title-name-h4 {
-    position: relative;
-    bottom: 20px;
-  }
-  .green-span {
-    width: 1vw;
-    height: 1vw;
-    position: relative;
-    left: 2px;
-    margin-right: 10px;
-    display: inline-block;
-    background-color: limegreen;
-    border-radius: 50%;
-  }
-
-  #title-name-button-div {
-    position: relative;
-    top: 13vh;
-  }
-
-  #title-name-button-div button {
-    height: 2.5vw;
-    border-radius: 5px;
-    border: none;
-    margin-top: 2vh;
-    color: var(--color);
-    background-color: var(--vired-color);
-    transition: all 0.3s ease;
-  }
-  #title-name-button-div button:hover {
-    background-color: var(--vired-color-hover);
-  }
-  #title-name-button-div button:active {
-    transform: scale(0.9);
-  }
-  #title-name-button-div button:focus {
-    border: 3px solid var(--highlight-color);
-  }
-  #title-name-button-div button svg {
-    margin-bottom: 3px;
-  }
-  #title-name-button-div a {
-    text-decoration: none;
-  }
-  #github-icon {
-    display: inline;
-    fill: var(--highlight-color);
-  }
-  #linkedin-icon {
-    display: inline;
-    fill: var(--highlight-color);
-  }
-  #email-icon {
-    display: inline;
-    fill: var(--highlight-color);
-  }
   #email-icon-contact {
     display: inline;
     fill: var(--forground-color);
@@ -262,6 +134,7 @@ body {
     position: relative;
     bottom: 1px;
   }
+
   #linkedin-icon-contact {
     fill: var(--forground-color);
     transition: all 0.3s ease;
@@ -293,13 +166,8 @@ body {
   #location-svg {
     fill: var(--forground-color);
   }
-  #phone-svg {
-    fill: var(--forground-color);
-    width: 16px;
-    height: auto;
-  }
   #title-improving {
-    margin-top: 50vh;
+    margin-top: 40vh;
   }
   /* 3d animation styles */
   .container {

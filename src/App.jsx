@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "/src/css.files/App.css";
 import { ScreenSizeProvider, useScreenSize } from "./contexts";
 import { ThemeContextProvider } from "./contexts";
-import { DashContext, DashContextProvider } from "./contexts";
+import { DashContext, DashContextProvider, NavBarMenuProvider } from "./contexts";
 import TitlePart from './components/title'  
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
@@ -33,7 +33,6 @@ function DashBoard() {
 
   return (
     <>
-      {!isMobile && (
         <motion.div
         id="scroll-indicator"
         style={{
@@ -46,11 +45,10 @@ function DashBoard() {
           originX: 0,
                }}
       />
-      )}
       {isMobile ? (
         <>
           <NavBar />
-          <TitlePart />
+          {toBedisplayed}
           <Footer />
         </>
       ) : (
@@ -67,13 +65,15 @@ function DashBoard() {
 function App() {
   return (
   <>
+  <NavBarMenuProvider>
     <DashContextProvider>
       <ThemeContextProvider>
-          <ScreenSizeProvider>
-            <DashBoard />
-          </ScreenSizeProvider>     
+        <ScreenSizeProvider>
+          <DashBoard />
+        </ScreenSizeProvider>     
       </ThemeContextProvider> 
-    </DashContextProvider>
+    </DashContextProvider>     
+  </NavBarMenuProvider>
   </>
   );
 }

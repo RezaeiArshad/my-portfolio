@@ -1,0 +1,118 @@
+    #header-name {
+      display: inline;
+      font-family: "Lobster", sans-serif;
+      color: var(--forground-color);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    #header-name:hover {
+      transform: scale(1.1);
+      color: var(--color);
+      text-shadow: 1px 1px 2px var(--highlight-color);
+    }
+
+    #header-name:active {
+      transform: scale(0.9);
+    }
+
+    #navbar {
+      border-bottom: 1px solid transparent;
+      -o-border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
+      border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
+      padding: 1vh 1vh 2vh 1vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 4;
+      margin-top: 0 !important;
+      margin-right: 0 !important;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      background-color: var(--shadow-color);
+    }
+
+    #navbar-menu-btn-div {
+       position: relative;
+       display: inline;
+       z-index: 4;
+    }
+
+    #navbar-menu-btn {
+        border-radius: 5px;
+        border: 2px solid var(--forground-color);
+        position: relative;
+        top: calc(50% - 15.5px);
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    }
+ 
+    #straightline-svg {
+        position: absolute;
+        fill: var(--forground-color);
+        width: auto;
+        margin: 5% 0 0 5%;
+        height: 90%;
+    }
+
+
+    #theme-button:hover {
+      box-shadow: none !important;
+    } 
+
+@media (max-width: 768px) {
+
+      #navbar {
+        display: flex;
+      }
+
+      #header-name:active {
+        color: var(--highlight-color);
+        text-shadow: 1px 1px 2px var(--forground-color);
+      }
+
+      #theme-button {
+        background-color: var(--shadow-color);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: var(--color);
+        border-radius: 20px;
+        border: none;
+        box-sizing: border-box;
+        font-size: clamp(0.95rem, 1.5vw, 1.3rem);
+        transition: all 0.3s ease;
+      }
+
+      #theme-button:active {
+        box-shadow: 0 0 10px 2px var(--highlight-color);
+        transform: scale(0.9);
+      }
+
+      #theme-button {
+        position: relative;
+        top: 3vw;
+      }
+}
+
+@media (min-width: 768px) {
+      #navbar button {
+        background-color: var(--shadow-color);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: var(--color);
+        border-radius: 20px;
+        border: none;
+        box-sizing: border-box;
+        font-size: clamp(0.95rem, 1.5vw, 1.3rem);
+        transition: all 0.3s ease;
+      }
+      #navbar button:hover {
+        box-shadow: 0 0 10px 1px var(--color);
+      }
+      #navbar button:active {
+        box-shadow: 0 0 10px 2px var(--highlight-color);
+        transform: scale(0.9);
+      }
+}
