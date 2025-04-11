@@ -102,9 +102,20 @@ body {
   }
 }
 @media (max-width: 768px) {
+  .h1-clamp {
+    font-size: clamp(3rem , 10vw, 4.5rem);
+  }
 
   .h2-clamp {
-    font-size: clamp(2.5rem, 7vw, 3.2rem);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+  }
+
+  .h3-clamp {
+    font-size: clamp(1.2rem, 3vw, 2.6rem)
+  }
+
+  .p-clamp {
+    font-size: clamp(0.8rem, 2.5vw, 1rem)
   }
 
 
@@ -126,49 +137,15 @@ body {
     font-size: clamp(0.8rem, 1.5vw, 1rem);
   }
 
-
-  #email-icon-contact {
-    display: inline;
-    fill: var(--forground-color);
-    transition: all 0.3s ease;
-    position: relative;
-    bottom: 1px;
+  #tsparticles {
+    position: fixed;
+    z-index: -2;
   }
 
-  #linkedin-icon-contact {
-    fill: var(--forground-color);
-    transition: all 0.3s ease;
-    position: relative;
-    bottom: 1px;
-    transition: all 0.2s ease;
-  }
-  #linkedin-icon-contact:hover, #linkedin-icon-contact:active {
-    transform: scale(1.1);
-    fill: var(--highlight-color);
-  }
-  #github-icon-contact {
-    fill: var(--forground-color);
-    transition: all 0.3s ease;
-    position: relative;
-    bottom: 1px;
-    transition: all 0.2s ease;
-  }
-  #github-icon-contact:hover, #github-icon-contact:active {
-    transform: scale(1.1);
-    fill: var(--highlight-color);
-  }
-  #arrow-svg {
-    fill: var(--vired-color);
-    height: 200px;
-    position: absolute;
-    left: 33%;
-  }
-  #location-svg {
-    fill: var(--forground-color);
-  }
   #title-improving {
     margin-top: 40vh;
   }
+  
   /* 3d animation styles */
   .container {
     perspective: 800px;
@@ -225,33 +202,5 @@ body {
     stroke: var(--highlight-color);
   }
 
-  #contact {
-    margin-top: 18vh;
-  }
-  #contact-profile {
-    border: 2px solid var(--forground-color);
-    border-radius: 25px;
-    background-color: var(--shadow-color);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-  }
-  #contact-profile img {
-    border-radius: 50%;
-  }
-  #tsparticles {
-    position: fixed;
-    z-index: -2;
-  }
-  #email-contact {
-    text-decoration: none;
-    transition: all 0.2s ease;
-  }
-  #email-contact:hover, #email-contact:focus {
-    color: var(--highlight-color);
-  }
-  #contact-profile-name {
-    border-bottom: 1px solid transparent;
-    -o-border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
-       border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
-  }
+
 }/*# sourceMappingURL=App.css.map */

@@ -4,12 +4,13 @@ import "/src/css.files/App.css";
 import { ScreenSizeProvider, useScreenSize } from "./contexts";
 import { ThemeContextProvider } from "./contexts";
 import { DashContext, DashContextProvider, NavBarMenuProvider } from "./contexts";
-import TitlePart from './components/title'  
-import NavBar from "./components/navbar";
+import TitlePart from './components/title/title'  
+import NavBar from "./components/navbar/navbar";
 import Footer from "./components/footer";
-import ProjectsPart from "./components/projects";
-import ContactPart from "./components/contact";
+import ProjectsPart from "./components/projects/projects";
+import ContactPart from "./components/contact/contact";
 import { motion, useScroll } from "motion/react"
+import { ParallaxProvider } from "react-scroll-parallax";
 
 
 function DashBoard() {
@@ -65,6 +66,7 @@ function DashBoard() {
 function App() {
   return (
   <>
+  <ParallaxProvider>
   <NavBarMenuProvider>
     <DashContextProvider>
       <ThemeContextProvider>
@@ -73,7 +75,8 @@ function App() {
         </ScreenSizeProvider>     
       </ThemeContextProvider> 
     </DashContextProvider>     
-  </NavBarMenuProvider>
+  </NavBarMenuProvider>    
+  </ParallaxProvider>
   </>
   );
 }
