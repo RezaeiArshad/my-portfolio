@@ -1,7 +1,7 @@
-import "../css.files/navbarmenu.css"
+import "../../css.files/navbar/navbarmenu.css"
 import { motion } from "motion/react"
-import { NavbarMenuContext } from "../contexts"
-import { DashContext } from "../contexts"
+import { NavbarMenuContext } from "../../contexts"
+import { DashContext } from "../../contexts"
 import { useContext } from "react"
 
 function NavBarMenu() {

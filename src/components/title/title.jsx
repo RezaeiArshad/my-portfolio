@@ -2,9 +2,10 @@ import { useScreenSize } from '../../contexts';
 import { motion } from 'motion/react';
 import { useAnimationFrame } from "motion/react"
 import { useRef } from "react";
-import TitleFrameWorks from '../titleframeworks';
-import TitleWorking from '../titleworking';
+import TitleFrameWorks from './titleframeworks';
+import TitleWorking from './titleworking';
 import TitleName from './titlename';
+import { Parallax } from 'react-scroll-parallax';
 
 
 function UseAnimationFrame() {
@@ -17,10 +18,11 @@ function UseAnimationFrame() {
   })
   return (
       <motion.div 
-      initial={{opacity: 0, x: 200}}
-      whileInView={{opacity: 1, x: 0}}
-      viewport={{ once: false, margin: "+10px"}}
+      initial={{opacity: 0, y: 200}}
+      whileInView={{opacity: 1, y: 0}}
+      viewport={{ once: false, margin: "-10px"}}
       transition={{duration: 1}}
+      style={{zIndex: -3}}
       className="container col-12">
           <div className="cube" ref={ref}>
               <div className="side front" />
@@ -49,32 +51,54 @@ function TitlePart() {
   return (
     <>
       {isMobile ? (
-        <div className="row">
+        <>
           {/* this is for mobile */}
-          <h1 style={{color: "red"}}>heelo</h1>
-        </div>
+          <TitleName />
+          <TitleWorking />
+          <div style={{marginTop: "45vh"}} id='title-improving'>
+            <UseAnimationFrame />              
+            <motion.h1 
+              initial={{opacity: 0}}
+              whileInView={{opacity: 1}}
+              viewport={{once: false, margin: "-100px"}}
+              transition={{ duration: 1}}
+              className='text-center h1-clamp mt-5'
+              style={{zIndex: 2}}
+              >Ever-improving</motion.h1>
+              <Parallax speed={5}>
+                <motion.h4
+                  initial={{opacity: 0}}
+                  whileInView={{opacity: 1}}
+                  viewport={{once: false, margin: "-150px"}}
+                  transition={{ duration: 1}}
+                  className="col-8 offset-2 mt-4"
+                  >I know technology moves fast but I'm faster , for my next ambition I'll learn <span className="highlight">Three.js</span>. . .</motion.h4>
+              </Parallax>
+            <TitleFrameWorks /> 
+          </div>
+        </>
       ) : (
         <div>
           <TitleName />
           <TitleWorking />
-        <div id='title-improving'>
-          <div className="row" style={{width: "100%"}}>
-            <div className='offset-md-2 col-5'>
-              <motion.h1 
-              initial={{opacity: 0}}
-              whileInView={{opacity: 1}}
-              viewport={{once: false, margin: "+50px"}}
-              transition={{ duration: 1}}
-              className='col-12 p-0 h2-clamp'>Ever-improving</motion.h1>
-              <motion.h4
-              initial={{opacity: 0, x: 200}}
-              whileInView={{opacity: 1, x: 0}}
-              viewport={{once: false, margin: "+50px"}}
-              transition={{ duration: 1}}
-              className="col-9 forground"
-              >I know <span className="text-color">technology moves fast</span> but I'm <span className="text-color">faster</span> , for my next ambition I'll learn <span className="highlight">Three.js</span>. . .</motion.h4>
-            </div>
-            <div className="col-3">
+          <div id='title-improving'>
+            <div className="row" style={{width: "100%"}}>
+              <div className='offset-md-2 col-5'>
+                <motion.h1 
+                initial={{opacity: 0}}
+                whileInView={{opacity: 1}}
+                viewport={{once: false, margin: "+50px"}}
+                transition={{ duration: 1}}
+                className='col-12 p-0 h2-clamp'>Ever-improving</motion.h1>
+                <motion.h4
+                initial={{opacity: 0, x: 200}}
+                whileInView={{opacity: 1, x: 0}}
+                viewport={{once: false, margin: "+50px"}}
+                transition={{ duration: 1}}
+                className="col-9 forground"
+                >I know <span className="text-color">technology moves fast</span> but I'm <span className="text-color">faster</span> , for my next ambition I'll learn <span className="highlight">Three.js</span>. . .</motion.h4>
+              </div>
+              <div className="col-3">
               <UseAnimationFrame />
             </div>
           </div>

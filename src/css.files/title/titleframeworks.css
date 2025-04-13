@@ -1,0 +1,37 @@
+  #title-frameworks {
+    height: 100%;
+  }
+
+  #title-frameworks-framework img {
+
+    position: relative;
+    display: inline;
+    bottom: 5px;
+    background-color: transparent;
+  }  
+
+  #title-frameworks-framework h3 {
+    display: inline;
+  }
+
+@media (max-width: 768px) {
+  #title-frameworks {
+    margin-top: 48vh;
+  }
+
+  #title-frameworks-framework img {
+    max-width: 35px;
+  }
+
+}
+
+@media (min-width: 768px) {
+  #title-frameworks {
+    margin-top: 35vh;
+  }
+
+  #title-frameworks-framework img {
+    max-width: 32px;    
+  }
+
+}

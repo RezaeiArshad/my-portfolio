@@ -1,0 +1,139 @@
+#title-name {
+    margin-top: 22vh;
+}
+
+#title-name-h1 {
+    height: -moz-fit-content;
+    height: fit-content;
+    font-weight: bolder;
+}
+    
+#title-name-svg {
+    position: absolute;
+    z-index: -1;
+    fill: var(--vired-color)
+}
+
+.green-span {
+  position: relative;
+  left: 2px;
+  margin-right: 10px;
+  display: inline-block;
+  background-color: limegreen;
+  border-radius: 50%;
+}
+
+
+@media (max-width: 768px) {
+  #title-name-svg {
+    max-width: 250px;
+    width: 70%;
+    max-height: 250px;
+    height: 70%;
+  }
+
+  #title-name-h4 {
+    position: relative;
+    top: 5px;
+  }
+
+  #title-name-h5-1 {
+    margin-top: 30px;
+  }
+
+  #title-name-h5-2 {
+    margin-bottom: 3vh;
+  }
+
+  .green-span {
+    width: 2vw;
+    height: 2vw;
+  }
+
+  #title-name-svg {
+    top: 110px;
+  }
+
+  #title-name a svg {
+    width: 22px;
+    height: auto;
+    fill: var(--forground-color);
+    display: inline;
+    transition: all 0.3s ease;
+  }
+
+
+  #title-name a svg:hover {
+    fill: var(--highlight-color);
+    transform: scale(1.1)
+  }
+
+  #title-name a svg:active {
+    transform: scale(0.95);
+  }
+
+  #arrow-svg {
+    fill: var(--vired-color);
+    margin-right: auto;
+  }
+  
+}
+
+@media (min-width: 768px) {
+
+  #title-name-h1 {
+      position: relative;
+      bottom: 20px;
+  }
+
+  #title-name-svg {
+      width: 150px;
+      height: 150px;
+      left: 10%;
+  }
+
+  #title-name-h4 {
+      position: relative;
+      bottom: 20px;
+  }
+  .green-span {
+    width: 1vw;
+    height: 1vw;
+  }
+
+  #title-name-button-div {
+      position: relative;
+      top: 13vh;
+  }
+
+  #title-name-button-div button {
+      height: 2.5vw;
+      border-radius: 5px;
+      border: none;
+      margin-top: 2vh;
+      color: var(--color);
+      background-color: var(--vired-color);
+      transition: all 0.3s ease;
+  }
+  #title-name-button-div button:hover {
+      background-color: var(--vired-color-hover);
+  }
+  #title-name-button-div button:active {
+      transform: scale(0.9);
+  }
+  #title-name-button-div button:focus {
+      border: 3px solid var(--highlight-color);
+  }
+  #title-name-button-div button svg {
+      margin-bottom: 3px;
+  }
+  #title-name-button-div a {
+      text-decoration: none;
+  }
+
+  #title-name a svg {
+    fill: var(--highlight-color);
+    display: inline;
+  }
+
+}

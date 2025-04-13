@@ -1,12 +1,11 @@
 import { useContext } from "react";
-import { ThemeContext } from "../../contexts";
 import { AnimatePresence, motion } from "motion/react";
 import { useScreenSize } from "../../contexts";
 import { DashContext, NavbarMenuContext } from "../../contexts";
-import "../css.files/navbar.css"
-import NavBarMenu from "../navbarmenu";
+import "../../css.files/navbar/navbar.css"
+import NavBarMenu from "./navbarmenu";
 import ChangeThemeButton from "./navbarchangetheme";
-import NavBarMenuButton from "../navbarmenubutton";
+import NavBarMenuButton from "./navbarmenubutton";
 
 
 function NavBar() {

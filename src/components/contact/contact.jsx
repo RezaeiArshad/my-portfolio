@@ -2,7 +2,7 @@ import ParticlesComponent from '../particles.jsx'
 import { useScreenSize } from '../../contexts.jsx';
 import { motion } from 'motion/react';
 import ContactForm from './contactform.jsx';
-import imageMe from "../projects/photo1742210095.jpeg"
+import imageMe from "../../projects/photo1742210095.jpeg"
 import { ThemeContext } from '../../contexts.jsx';
 import { useContext } from 'react';
 import "../../css.files/contact/contact.css"

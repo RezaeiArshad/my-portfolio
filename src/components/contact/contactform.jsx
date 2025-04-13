@@ -1,6 +1,6 @@
 import React from "react";
-import "../css.files/contactForm.css"
-import "../css.files/App.css"
+import "../../css.files/contact/contactForm.css"
+import "../../css.files/App.css"
 import { motion } from "motion/react";
 
 export default function ContactForm() {

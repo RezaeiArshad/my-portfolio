@@ -1,15 +1,16 @@
-import "../css.files/titleframeworks.css"
+import "../../css.files/title/titleframeworks.css"
 import {motion} from "motion/react"
 import { useScreenSize } from "../../contexts"
-import imageBootstrap from "../assets/bootstrappic.png"
-import imageJavascript from "../assets/javascriptpic.png"
-import imageJquery from "../assets/jquerypic.png"
-import imageSass from "../assets/sasspic.png"
-import imageCss from "../assets/csspic.png"
-import imageReact from "../assets/reactpic.png"
-import imageHtml from "../assets/htmlpic.png"
-import imageRedux from "../assets/reduxpic.png"
-import imageMotion from "../assets/motionpic.png"
+import imageBootstrap from "../../assets/bootstrappic.png"
+import imageJavascript from "../../assets/javascriptpic.png"
+import imageJquery from "../../assets/jquerypic.png"
+import imageSass from "../../assets/sasspic.png"
+import imageCss from "../../assets/csspic.png"
+import imageReact from "../../assets/reactpic.png"
+import imageHtml from "../../assets/htmlpic.png"
+import imageRedux from "../../assets/reduxpic.png"
+import imageMotion from "../../assets/motionpic.png"
+import imageTypescript from "../../assets/typescriptpic.png"
 
 
 const frameworks = [
@@ -48,6 +49,10 @@ const frameworks = [
     {
       name: "motion",
       image: imageMotion
+    },
+    {
+      name: "typescript",
+      image: imageTypescript
     }
 ]
 
@@ -55,7 +60,24 @@ function TitleFrameWorks() {
     const {isMobile} = useScreenSize()
   return (
     <>
-      {isMobile ? <div></div> : 
+      {isMobile ? 
+        <div id="title-frameworks">
+          <h2 className="text-center h2-clamp">my frameworks</h2> 
+          <div className="col-9 mx-auto mt-5 row gy-5 justify-content-center">
+           {frameworks.map((framework, index) => (
+            <motion.div 
+              initial={{opacity: 0, y: 50}}
+              whileInView={{opacity: 1, y: 0}}
+              viewport={{once: false, margin: "+70px"}}
+              transition={{duration: 0.2 , delay: index / 5}}
+              className="col-6 col-sm-4 text-center" key={index} id="title-frameworks-framework">
+              <img className="img-fluid" src={framework.image} />
+              <h3 className="h4-clamp"> {framework.name}</h3>
+            </motion.div>
+           ))}
+           </div>
+        </div> 
+       : 
       <div id="title-frameworks">
            <h2 className="text-center">my frameworks</h2> 
            <div className="col-9 mx-auto mt-5 row gy-5 justify-content-center">

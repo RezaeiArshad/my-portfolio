@@ -23,6 +23,7 @@ import imageWatch from "./projects/watchpic.png"
 import imagePalindrome from "./projects/palindromepic.png"
 import imageFueled from "./projects/fueledpic.png"
 import imageDungeon from "./projects/dungeonpic.png"
+import imageHouse from "./projects/housepic.jpg"
 import imageBootstrap from "./assets/bootstrappic.png"
 import imageJavascript from "./assets/javascriptpic.png"
 import imageJquery from "./assets/jquerypic.png"
@@ -33,6 +34,7 @@ import imageHtml from "./assets/htmlpic.png"
 import imageRedux from "./assets/reduxpic.png"
 import imageMotion from "./assets/motionpic.png"
 import imageFFC from "./assets/ffcpic.png"
+import imageTypescript from "./assets/typescriptpic.png"
 import { useEffect, useState } from "react"
 import App from "./App"
 import { motion, AnimatePresence } from "motion/react"
@@ -59,6 +61,7 @@ const Preloader = () => {
          imageCash,
          imageRunner,
          imageGaming,
+         imageHouse,
          imageBook,
          imagePhone,
          imageStatistical,
@@ -80,7 +83,8 @@ const Preloader = () => {
          imageHtml,
          imageRedux,
          imageMotion,
-         imageFFC
+         imageFFC,
+         imageTypescript
         ];
 
         const loadImage = (path) => {
@@ -116,6 +120,7 @@ const Preloader = () => {
                 opacity: 0,
                 transition: {duration: 0.5}
             }}
+            className="h1-clamp"
             >
             {mehdiSvg}
           </motion.div>

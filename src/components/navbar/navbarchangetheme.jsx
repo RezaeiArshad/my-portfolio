@@ -22,9 +22,9 @@ function ChangeThemeButton() {
       if (element === "sun" && theme === "light") {
         sunRef.current?.classList.remove("fadeout")
         sunRef.current?.classList.add("hidden")
+        root.style.setProperty('--color', 'black')        
         root.style.setProperty('--background-color', '#dfdfdf')
         root.style.setProperty("--forground-color", "rgb(90, 90, 90)")
-        root.style.setProperty('--color', 'black')
         root.style.setProperty("--vired-color", "#cccccc")
         root.style.setProperty("--vired-color-hover", "#aaaaaa")
         root.style.setProperty("--if-theme", "blur(0)")
@@ -39,9 +39,9 @@ function ChangeThemeButton() {
       else if (element === "moon" && theme === "dark") {
         moonRef.current?.classList.remove("fadeout")
         moonRef.current?.classList.add("hidden");
+        root.style.setProperty('--color', 'white')        
         root.style.setProperty('--background-color', '#000000')
         root.style.setProperty("--forground-color", "gray")
-        root.style.setProperty('--color', 'white')
         root.style.setProperty("--vired-color", "#141414")
         root.style.setProperty("--vired-color-hover", "rgb(55, 55, 55)")
         root.style.setProperty("--if-theme", "invert(100%) sepia(3%) saturate(7488%) hue-rotate(267deg) brightness(120%) contrast(99%)")

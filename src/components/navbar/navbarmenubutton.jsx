@@ -1,7 +1,7 @@
 import { motion } from "motion/react"
-import { NavbarMenuContext } from "../contexts"
+import { NavbarMenuContext } from "../../contexts"
 import { useContext } from "react"
-import { ThemeContext } from "../contexts"
+import { ThemeContext } from "../../contexts"
 
 function NavBarMenuButton() {
 

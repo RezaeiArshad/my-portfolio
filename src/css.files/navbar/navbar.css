@@ -20,11 +20,12 @@
       border-bottom: 1px solid transparent;
       -o-border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
       border-image: linear-gradient(to left, var(--background-color), var(--forground-color), var(--background-color)) 1;
-      padding: 1vh 1vh 2vh 1vh;
+      padding: 1vh 1vw 2vh 1vw;
       position: fixed;
+      box-sizing: border-box;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 98vw;
       z-index: 4;
       margin-top: 0 !important;
       margin-right: 0 !important;
