@@ -10,10 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "motion": "^12.5.0",
+    "@motionone/dom": "^10.18.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.8.1",
+    "bootstrap": "^5.3.3",
+    "motion": "^12.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-responsive": "^10.0.1"
+    "react-responsive": "^10.0.1",
+    "react-scroll-parallax": "^3.4.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

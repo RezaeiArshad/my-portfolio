@@ -154,7 +154,7 @@ function ScrollEffectFfc() {
   const backgroundPercent = useTransform(
     scrollYProgress,
     [0.2, 0.65, 1],
-    [0, 30, 0 ]
+    [0, 35, 0 ]
   )  
 
   useEffect(() => {

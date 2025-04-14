@@ -116,23 +116,23 @@ body {
 @media (max-width: 768px) {
 
   .h1-clamp {
-    font-size: clamp(2.5rem , 10vw, 4rem);
+    font-size: clamp(2rem , 10vw, 4rem);
   }
 
   .h2-clamp {
-    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-size: clamp(2rem, 7vw, 3rem);
   }
 
   .h3-clamp {
-    font-size: clamp(1.2rem, 3vw, 2.6rem)
+    font-size: clamp(1.2rem, 4.5vw, 1.6rem)
   }
 
   .h4-clamp {
-    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-size: clamp(1rem, 5vw, 1.1rem);
   }
 
   .p-clamp {
-    font-size: clamp(0.8rem, 2.5vw, 1rem)
+    font-size: clamp(0.8rem, 4vw, 1.1rem)
   }
 
 
@@ -217,7 +217,7 @@ body {
     font-size: clamp(1rem, 2.5vw, 2rem);
   }
   .h4-clamp {
-    font-size: clamp(0.9rem , 2vw, 1.8rem);
+    font-size: clamp(0.9rem , 2vw, 1.5rem);
   }
   .p-clamp {
     font-size: clamp(0.8rem, 1.5vw, 1rem);
