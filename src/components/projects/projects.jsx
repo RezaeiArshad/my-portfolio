@@ -18,7 +18,11 @@ function ProjectsPart() {
         {isMobile ? (
           <>
             <div id="projects-div">
-              <div id="project-side-div"
+              <motion.div
+                initial={{x: 30, opacity: 0}}
+                animate={{opacity: 1, x: 0}}
+                transition={{duration: 0.5}}
+                id="project-side-div"
                 className="row offset-1 col-10">
                 <div className="col-8">
                  <h4 className="mb-0 h3-clamp">
@@ -61,7 +65,7 @@ function ProjectsPart() {
                     projects
                   </h4>
                 </div>
-              </div>
+              </motion.div>
               <ProjectsDiv />
             </div>
           </>

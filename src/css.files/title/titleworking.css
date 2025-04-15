@@ -74,7 +74,7 @@
 
 #scroll-background {
   position: fixed;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease;
   will-change: background;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -87,7 +87,7 @@
 @media (max-width: 768px) {
 
   #title-working {
-    margin-top: 30vh
+    margin-top: 50vh
   } 
 
   #working-svg {   
@@ -102,7 +102,7 @@
     height: auto;
     top: 5%;
     z-index: -1;
-    opacity: 0.6;
+    opacity: 0.7;
   }
 
   #title-working-ffc {

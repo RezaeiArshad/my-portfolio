@@ -1,6 +1,6 @@
 import { useScreenSize } from "../../contexts"
 import "../../css.files/title/titleworking.css"
-import { motion, useScroll, useTransform } from "motion/react"
+import { motion, useScroll, useTransform, animate } from "motion/react"
 import { Parallax } from 'react-scroll-parallax';
 import { ThemeContext } from "../../contexts";
 import { useContext, useEffect, useRef, useState } from 'react';
@@ -138,7 +138,8 @@ export default TitleWorking
 function ScrollEffectFfc() {
   const ref = useRef(null);
   const {theme} = useContext(ThemeContext)
-  const [currentColor, setCurrentColor] = useState(theme === "dark" ? "#fff" : "#dfdfdf")
+  const [bgColor, setBgColor] = useState(theme === "dark" ? "#0a0a22" : "rgba(0, 0, 255, 0.3)")
+
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -165,7 +166,7 @@ function ScrollEffectFfc() {
         return
       }
       if (element) {
-        element.style.background = `radial-gradient(circle at center,#0a0a22 0%, #0a0a22 ${value}%, transparent ${(value * 3)}%, transparent 100%)`;
+        element.style.background = `radial-gradient(circle at center,${bgColor} 0%, ${bgColor} ${value}%, transparent ${(value * 3)}%, transparent 100%)`;
       }
     };
   
@@ -174,12 +175,15 @@ function ScrollEffectFfc() {
     const unsubscribe = backgroundPercent.on("change", updateBackground);
     
     return () => unsubscribe();
-  }, [backgroundPercent, currentColor]);
+  }, [backgroundPercent, bgColor]);
 
   useEffect(() => {
-    const newColor = theme === "dark" ? "#fff" : "#dfdfdf"
-    setCurrentColor(newColor)  
-  }, [theme])
+      animate(backgroundPercent, 0, {duration: 0.1})
+      setBgColor(theme === "dark" ? "#0a0a22" : "rgba(0, 0, 255, 0.3)")      
+
+
+ }, [theme])
+
 
   return (
     <>
@@ -206,8 +210,6 @@ function ScrollEffectFfc() {
 
 function ScrollEffectCodeWars() {
   const ref = useRef(null);
-  const {theme} = useContext(ThemeContext)
-  const [currentColor, setCurrentColor] = useState(theme === "dark" ? "#fff" : "#dfdfdf")
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -243,12 +245,8 @@ function ScrollEffectCodeWars() {
     const unsubscribe = backgroundPercent.on("change", updateBackground);
     
     return () => unsubscribe();
-  }, [backgroundPercent, currentColor]);
+  }, [backgroundPercent]);
 
-  useEffect(() => {
-    const newColor = theme === "dark" ? "#fff" : "#dfdfdf"
-    setCurrentColor(newColor)  
-  }, [theme])
 
   return (
     <>

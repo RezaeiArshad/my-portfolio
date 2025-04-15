@@ -2,16 +2,88 @@
     margin-top: 20vh;
 }
 
+.project-frame {
+    background-color: var(--vired-color);
+    padding: 0 5px 3px 5px;
+    border-radius: 5px;
+}
 
+.projects-incompelete-svg h4 {
+    text-align: center;
+}
 
 @media (max-width: 768px) {
+
     .projects-project {
-        width: 30%;
+      padding: 5%;
+      margin-top: 5vw;
+      box-shadow: 0 0 10px 3px var(--vired-color);
+      border-radius: 15px;
+      background-color: var(--shadow-color);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
     }   
     
     .projects-project-img {
-        width: 20%;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2/1;
+        border-radius: 20px 20px 0 0;
+        object-fit: cover;
+        opacity: 0.8;
     } 
+
+    .projects-project-img-container {
+        position: relative;
+        padding: none;
+    }
+
+    .projects-watch-svg, .projects-incompelete-svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .projects-watch-svg {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+    }
+
+    .projects-watch-svg svg {
+        fill: var(--highlight-color);
+        width: 10%;
+        height: auto;
+        margin: 20% 0 0 calc(50% - 5%);
+        transition: all 0.2s ease-out;
+    }
+
+    .projects-watch-svg svg:hover {
+        fill: red;
+    }
+
+    .projects-incompelete-svg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 10;
+        color: white;
+        background-color: rgba(41, 41, 41, 0.8);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+        border-radius: 20px 20px 0 0;
+    }
+
+    .projects-incompelete-svg svg {
+        width: 10%;
+        height: auto;
+        fill: white;
+        margin: 18% 0 2% 45%;
+    }
     
 }
 
@@ -50,17 +122,6 @@
         margin-left: 5%;
     }
 
-    .projects-watch-svg {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(1px);
-        -webkit-backdrop-filter: blur(1px);
-        border-radius: 15px;
-    }
-
     .projects-watch-svg svg {
         fill: var(--highlight-color);
         width: 15%;
@@ -83,10 +144,6 @@
         backdrop-filter: blur(1px);
         -webkit-backdrop-filter: blur(1px);
         border-radius: 15px;
-    }
-
-    .projects-incompelete-svg h4 {
-        text-align: center;
     }
 
     .projects-incompelete-svg svg {
@@ -122,9 +179,14 @@
         border: 1px solid var(--forground-color);
     }
 
-    .project-frame {
-        background-color: var(--vired-color);
-        padding: 0 5px 3px 5px;
-        border-radius: 5px;
+    .projects-watch-svg {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+        border-radius: 15px;
     }
 }

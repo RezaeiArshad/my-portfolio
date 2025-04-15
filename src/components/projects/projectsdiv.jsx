@@ -34,7 +34,7 @@ const projects = [
     projectType: "web-app",
     projectImage: imageHouse,
     projectFrame: "typescript react",
-    projectDescription: "A web app to create constructional plans for any building"
+    projectDescription: "A web app to create constructional plans for any building by only providing general details"
   },
   {
     projectName: "25 + 5 clock",
@@ -231,20 +231,20 @@ const projects = [
 ]
 
 function ProjectsDiv() {
-    const {isMobile} = useScreenSize()
+    const {isMobile} = useScreenSize() 
 
 
     return (
       <>
         {isMobile ? (
-          <>
+          <div style={{ marginTop: "10vh" }}>
             {projects.map((project, index) => (
               <a
                 key={index}
                 target="_blank"
-                className="col-6 col-md-6 col-lg-4"
                 style={{ textDecoration: "none" }}
                 href={project.projectLink}
+                className="col-12"
               >
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
@@ -256,20 +256,120 @@ function ProjectsDiv() {
                   }}
                   className={
                     project.projectType === "mini-project"
-                      ? "projects-project col-12 mini-project"
+                      ? "projects-project col-10 offset-1 mini-project"
                       : project.projectType === "practice-project"
-                      ? "projects-project col-12 practice-project"
-                      : "projects-project col-12 app-project"
+                      ? "projects-project col-10 offset-1 practice-project"
+                      : "projects-project col-10 offset-1 app-project"
                   }
                 >
-                  <img
-                    className="projects-project-img"
-                    src={project.projectImage}
-                    alt={`A picture of ${project.projectName}`}
-                  />
-                  <h4 className="h4-clamp">{project.projectName}</h4>
-                  <p className="forground p-clamp">{project.projectType}</p>
-                  <div className="text-color mt-1">
+                  <div
+                    style={{
+                      overflow: "hidden",
+                      borderRadius: "20px 20px 0 0",
+                    }}
+                    className="project-upper-div"
+                  >
+                    <motion.div
+                      initial={{ scale: 1}}
+                      whileHover={{ scale: 1.05}}
+                      className="projects-project-img-container"
+                    >
+                      <motion.div
+                        initial={{ opacity: 0}}
+                        whileHover={{ opacity: 1}}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        className={
+                          project.projectLink
+                            ? "projects-watch-svg"
+                            : "projects-incompelete-svg"
+                        }
+                      >
+                        {project.projectLink ? (
+                          <svg
+                            viewBox="0 0 256 256"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                              <path d="M45 73.264c-14.869 0-29.775-8.864-44.307-26.346c-0.924-1.112-0.924-2.724 0-3.836C15.225 25.601 30.131 16.737 45 16.737c14.868 0 29.775 8.864 44.307 26.345c0.925 1.112 0.925 2.724 0 3.836C74.775 64.399 59.868 73.264 45 73.264zM6.934 45C19.73 59.776 32.528 67.264 45 67.264c12.473 0 25.27-7.487 38.066-22.264C70.27 30.224 57.473 22.737 45 22.737C32.528 22.737 19.73 30.224 6.934 45z" />
+                              <path d="M45 62c-9.374 0-17-7.626-17-17s7.626-17 17-17s17 7.626 17 17S54.374 62 45 62zM45 34c-6.065 0-11 4.935-11 11s4.935 11 11 11s11-4.935 11-11S51.065 34 45 34z" />
+                            </g>
+                          </svg>
+                        ) : (
+                          <>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlnsXlink="http://www.w3.org/1999/xlink"
+                              version="1.1"
+                              width="256"
+                              height="256"
+                              viewBox="0 0 256 256"
+                              xmlSpace="preserve"
+                            >
+                              <g transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                                <path
+                                  d="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 C 90 69.813 69.813 90 45 90 z M 45 4 C 22.393 4 4 22.393 4 45 s 18.393 41 41 41 s 41 -18.393 41 -41 S 67.607 4 45 4 z"
+                                  transform=" matrix(1 0 0 1 0 0) "
+                                  strokeLinecap="round"
+                                />
+                                <circle
+                                  cx="30.344"
+                                  cy="33.274"
+                                  r="5.864"
+                                  transform="  matrix(1 0 0 1 0 0) "
+                                />
+                                <circle
+                                  cx="59.663999999999994"
+                                  cy="33.274"
+                                  r="5.864"
+                                  transform="  matrix(1 0 0 1 0 0) "
+                                />
+                                <path
+                                  d="M 72.181 65.49 c -0.445 0 -0.893 -0.147 -1.265 -0.451 c -7.296 -5.961 -16.5 -9.244 -25.916 -9.244 c -9.417 0 -18.62 3.283 -25.916 9.244 c -0.854 0.7 -2.115 0.572 -2.814 -0.283 c -0.699 -0.855 -0.572 -2.115 0.283 -2.814 C 24.561 55.398 34.664 51.795 45 51.795 c 10.336 0 20.438 3.604 28.447 10.146 c 0.855 0.699 0.982 1.959 0.283 2.814 C 73.335 65.239 72.76 65.49 72.181 65.49 z"
+                                  transform=" matrix(1 0 0 1 0 0) "
+                                  strokeLinecap="round"
+                                />
+                              </g>
+                            </svg>
+                            <h4 className="p-clamp">hasn't been finished</h4>
+                          </>
+                        )}
+                      </motion.div>
+                        <img
+                          className="projects-project-img"
+                          src={project.projectImage}
+                          alt={`A picture of ${project.projectName}`}
+
+                        />  
+                      
+                    </motion.div>
+                  </div>
+                  <h4
+                    style={{
+                      marginTop: "10px",
+                      width: "90%",
+                      marginBottom: "3px",
+                    }}
+                    className="h3-clamp"
+                  >
+                    {project.projectName}
+                  </h4>
+                  <h4
+                    style={{ marginBottom: "20px", width: "90%" }}
+                    className="text-color p-clamp"
+                  >
+                    {project.projectDescription}
+                  </h4>
+                  <p
+                    style={{ display: "inline" }}
+                    className="forground p-clamp"
+                  >
+                    {project.projectType}
+                  </p>
+                  <div
+                    style={{ width: "95%", display: "inline" }}
+                    className="text-color mt-1"
+                  >
                     {project.projectFrame.split(" ").map((frame, index) => (
                       <div
                         style={{ display: "inline", marginLeft: "5%" }}
@@ -280,79 +380,18 @@ function ProjectsDiv() {
                       </div>
                     ))}
                   </div>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                    className={
-                      project.projectLink
-                        ? "projects-watch-svg"
-                        : "projects-incompelete-svg"
-                    }
-                  >
-                    {project.projectLink ? (
-                      <svg
-                        viewBox="0 0 256 256"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
-                          <path d="M45 73.264c-14.869 0-29.775-8.864-44.307-26.346c-0.924-1.112-0.924-2.724 0-3.836C15.225 25.601 30.131 16.737 45 16.737c14.868 0 29.775 8.864 44.307 26.345c0.925 1.112 0.925 2.724 0 3.836C74.775 64.399 59.868 73.264 45 73.264zM6.934 45C19.73 59.776 32.528 67.264 45 67.264c12.473 0 25.27-7.487 38.066-22.264C70.27 30.224 57.473 22.737 45 22.737C32.528 22.737 19.73 30.224 6.934 45z" />
-                          <path d="M45 62c-9.374 0-17-7.626-17-17s7.626-17 17-17s17 7.626 17 17S54.374 62 45 62zM45 34c-6.065 0-11 4.935-11 11s4.935 11 11 11s11-4.935 11-11S51.065 34 45 34z" />
-                        </g>
-                      </svg>
-                    ) : (
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlnsXlink="http://www.w3.org/1999/xlink"
-                          version="1.1"
-                          width="256"
-                          height="256"
-                          viewBox="0 0 256 256"
-                          xmlSpace="preserve"
-                        >
-                          <g transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
-                            <path
-                              d="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 C 90 69.813 69.813 90 45 90 z M 45 4 C 22.393 4 4 22.393 4 45 s 18.393 41 41 41 s 41 -18.393 41 -41 S 67.607 4 45 4 z"
-                              transform=" matrix(1 0 0 1 0 0) "
-                              strokeLinecap="round"
-                            />
-                            <circle
-                              cx="30.344"
-                              cy="33.274"
-                              r="5.864"
-                              transform="  matrix(1 0 0 1 0 0) "
-                            />
-                            <circle
-                              cx="59.663999999999994"
-                              cy="33.274"
-                              r="5.864"
-                              transform="  matrix(1 0 0 1 0 0) "
-                            />
-                            <path
-                              d="M 72.181 65.49 c -0.445 0 -0.893 -0.147 -1.265 -0.451 c -7.296 -5.961 -16.5 -9.244 -25.916 -9.244 c -9.417 0 -18.62 3.283 -25.916 9.244 c -0.854 0.7 -2.115 0.572 -2.814 -0.283 c -0.699 -0.855 -0.572 -2.115 0.283 -2.814 C 24.561 55.398 34.664 51.795 45 51.795 c 10.336 0 20.438 3.604 28.447 10.146 c 0.855 0.699 0.982 1.959 0.283 2.814 C 73.335 65.239 72.76 65.49 72.181 65.49 z"
-                              transform=" matrix(1 0 0 1 0 0) "
-                              strokeLinecap="round"
-                            />
-                          </g>
-                        </svg>
-                        <h4 className="p-clamp">hasn't been finished</h4>
-                      </>
-                    )}
-                  </motion.div>
                 </motion.div>
               </a>
             ))}
-          </>
+          </div>
         ) : (
           <>
-          {/* this is for laptop */}
+            {/* this is for laptop */}
             {projects.map((project, index) => (
               <a
                 key={index}
                 target="_blank"
-                className="col-6 col-md-6 col-xl-4"
+                className="col-6 col-md-6 col-xxl-4"
                 style={{ textDecoration: "none" }}
                 href={project.projectLink}
               >
@@ -377,16 +416,24 @@ function ProjectsDiv() {
                     src={project.projectImage}
                     alt={`A picture of ${project.projectName}`}
                   />
-                  <h4 
-                    style={{marginTop: "10px", width: "90%", marginBottom: "3px"}}
-                    className="h4-clamp">{project.projectName}</h4>
                   <h4
-                    style={{marginBottom: "20px", width: "90%"}}
-                    className="text-color p-clamp">{project.projectDescription}</h4>
+                    style={{
+                      marginTop: "10px",
+                      width: "90%",
+                      marginBottom: "3px",
+                    }}
+                    className="h4-clamp"
+                  >
+                    {project.projectName}
+                  </h4>
+                  <h4
+                    style={{ marginBottom: "20px", width: "90%" }}
+                    className="text-color p-clamp"
+                  >
+                    {project.projectDescription}
+                  </h4>
                   <p className="forground p-clamp">{project.projectType}</p>
-                  <div
-                    style={{width: "95%"}}
-                    className="text-color mt-1">
+                  <div style={{ width: "95%" }} className="text-color mt-1">
                     {project.projectFrame.split(" ").map((frame, index) => (
                       <div
                         style={{ display: "inline", marginLeft: "5%" }}

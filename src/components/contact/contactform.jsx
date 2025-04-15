@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../../css.files/contact/contactForm.css"
 import "../../css.files/App.css"
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useScreenSize } from "../../contexts";
 
-export default function ContactForm() {
+
+
+function ContactForm() {
     const [result, setResult] = React.useState();
+    const {isMobile} = useScreenSize()
+
+    const ref = useRef(null);
+    
+    const {scrollYProgress} = useScroll({
+      target: ref,
+      offset: ["start end", "center center", "end start"]
+    })
+
+    const opacity = useTransform(
+      scrollYProgress,
+      [0.10, 0.3, 0.75, 1],
+      [0, 1, 1, 0]
+    )
+
   
     const onSubmit = async (event) => {
       event.preventDefault();
@@ -59,29 +77,136 @@ export default function ContactForm() {
     };
   
     return (
-      <div id="form-div">
-        <form id="form" style={{height: "100%"}} onSubmit={onSubmit}>
-            <div style={{height: "13%"}} className="d-block mx-auto col-11">
-             <input className="col-5 contact-form-input" placeholder="name" type="text" name="name" required/>
-             <input className=" offset-1 col-6 contact-form-input" placeholder="email" type="email" name="email" required/>  
+      <>
+      {isMobile ?  <div id="form-div">
+          <motion.h1
+            ref={ref}
+            style={{opacity}}
+            className="text-center h1-clamp"
+            id="contact-header"
+            >Email me</motion.h1>
+          <motion.form
+            initial={{opacity: 0, y: 100}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: false, margin: "-50px"}}
+            id="form" style={{ height: "100%" }} onSubmit={onSubmit}>
+            <div 
+              style={{height: "7vh"}}
+              className="d-block mx-auto col-11">
+              <input
+                className="col-5 contact-form-input"
+                placeholder="name"
+                type="text"
+                name="name"
+                required
+              />
+              <input
+                className=" offset-1 col-6 contact-form-input"
+                placeholder="email"
+                type="email"
+                name="email"
+                required
+              />
             </div>
-            <div style={{height: "13%"}} className="d-block col-11 mx-auto mt-4">
-             <input className="contact-form-input col-12" placeholder="subject" type="text" name="subject" required />   
+            <div
+              style={{height: "7vh"}}
+              className="d-block col-11 mx-auto mt-4"
+            >
+              <input
+                className="contact-form-input col-12"
+                placeholder="subject"
+                type="text"
+                name="subject"
+                required
+              />
             </div>
-            <div style={{height: "34%"}} className="d-block col-11 mx-auto mt-4">
-              <textarea className="contact-form-input col-12" placeholder="message" name="message" required></textarea>
-            </div>  
+            <div
+              style={{ height: "15vh" }}
+              className="d-block col-11 mx-auto mt-4"
+            >
+              <textarea
+                className="contact-form-input col-12"
+                placeholder="message"
+                name="message"
+                required
+              ></textarea>
+            </div>
             <div className="mt-4 col-11 d-block mx-auto">
               <div className="row">
                 <div className="col-lg-5 col-6 d-inline">
-                  <button className="p-clamp" id="contact-form-button" type="submit">send message</button>
+                  <button
+                    className="p-clamp"
+                    id="contact-form-button"
+                    type="submit"
+                  >
+                    send message
+                  </button>
                 </div>
-                <div className="col-6 d-flex justify-content-end">
-                 {result} 
-                </div>
+                <div className="col-6 d-flex justify-content-end">{result}</div>
               </div>
-            </div> 
-          </form>
-      </div>
+            </div>
+          </motion.form>
+        </div> :
+         <div id="form-div">
+        {/* this is for laptop */}          
+         <form id="form" style={{ height: "100%" }} onSubmit={onSubmit}>
+           <div style={{ height: "13%" }} className="d-block mx-auto col-11">
+             <input
+               className="col-5 contact-form-input"
+               placeholder="name"
+               type="text"
+               name="name"
+               required
+             />
+             <input
+               className=" offset-1 col-6 contact-form-input"
+               placeholder="email"
+               type="email"
+               name="email"
+               required
+             />
+           </div>
+           <div
+             style={{ height: "13%" }}
+             className="d-block col-11 mx-auto mt-4"
+           >
+             <input
+               className="contact-form-input col-12"
+               placeholder="subject"
+               type="text"
+               name="subject"
+               required
+             />
+           </div>
+           <div
+             style={{ height: "34%" }}
+             className="d-block col-11 mx-auto mt-4"
+           >
+             <textarea
+               className="contact-form-input col-12"
+               placeholder="message"
+               name="message"
+               required
+             ></textarea>
+           </div>
+           <div className="mt-4 col-11 d-block mx-auto">
+             <div className="row">
+               <div className="col-lg-5 col-6 d-inline">
+                 <button
+                   className="p-clamp"
+                   id="contact-form-button"
+                   type="submit"
+                 >
+                   send message
+                 </button>
+               </div>
+               <div className="col-6 d-flex justify-content-end">{result}</div>
+             </div>
+           </div>
+         </form>
+       </div>}
+      </>
     );
   }
+
+  export default ContactForm

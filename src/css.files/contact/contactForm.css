@@ -2,7 +2,7 @@
 .loader {
   width: 40px;
   height: 20px;
-  --c:no-repeat radial-gradient(farthest-side,#fff 93%,#0000);
+  --c:no-repeat radial-gradient(farthest-side,var(--color) 93%,#0000);
   background:
     var(--c) 0    0,
     var(--c) 50%  0;
@@ -18,7 +18,7 @@
   position: absolute;
   width: 8px;
   height: 12px;
-  background: #fff;
+  background: var(--color);
   left: -16px;
   top: 0;
   animation: 
@@ -32,7 +32,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #fff; 
+  background: var(--color); 
   animation: l6-3 1.5s linear infinite;
 }
 
@@ -60,6 +60,75 @@
   90%         {transform:translate(26px)}
 }
 
+#contact-form-message {
+  padding-top: 15px;
+}
+
+
+
+#contact-form-button {
+  padding: 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--vired-color);
+  color: var(--color);
+  transition: all 0.4s ease;
+}
+
+#contact-form-button:hover {
+  outline: none;
+  box-shadow: 0 0 10px 1px var(--highlight-color);
+}
+
+#contact-form-button:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 10px 1px var(--highlight-color);
+}
+
+#contact-header {
+  color: var(--color);
+  text-shadow: 1px 1px 20px var(--highlight-color);
+}
+
+
+@media (max-width: 768px) {
+  #form-div {
+    margin-top: 30vh;
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  #form {
+    margin-top: 5vh;
+  }
+
+  .contact-form-input {
+    height: 100%;
+    border-radius: 20px;
+    padding: 7px 6px 8px 19px;
+    border: 1px solid var(--vired-color-hover);
+    background-color: var(--vired-color);
+    box-shadow: 0 0 5px 1px var(--vired-color);
+    color: var(--color);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-size: clamp(1rem , 1.5vw, 1.3rem);
+    resize: none;
+  }
+
+  .contact-form-input:hover, .contact-form-input:active {
+    outline: none;
+    border: 1px solid var(--highlight-color);
+    box-shadow: 0 0 4px 0.5px var(--highlight-color);
+  }
+
+  #contact-checkmark {
+    transform: scale(1.2);
+    fill: transparent;
+  }
+
+}
+
 @media (min-width: 768px) {
   #form-div {
     height: 100%;
@@ -70,15 +139,11 @@
     margin-top: 6%;
   }
 
-  #contact-form-message {
-    padding-top: 15px;
-  }
-
   .contact-form-input {
     height: 100%;
     border-radius: 20px;
     padding: 7px 6px 8px 19px;
-    border: none;
+    border: 2px solid var(--vired-color);
     background-color: var(--vired-color);
     box-shadow: 0 0 5px 1px var(--color);
     color: var(--color);
@@ -87,36 +152,11 @@
     font-size: clamp(1rem , 1.5vw, 1.3rem);
     resize: none;
   }    
-
+  
   .contact-form-input:hover, .contact-form-input:active {
     outline: none;
     border: 2px solid var(--highlight-color);
     box-shadow: 0 0 10px 1px var(--highlight-color);
   }
 
-  #contact-form-button {
-    padding: 15px;
-    border: none;
-    border-radius: 20px;
-    background-color: var(--vired-color);
-    color: var(--color);
-    transition: all 0.4s ease;
-  }
-
-  #contact-form-button:hover {
-    outline: none;
-    box-shadow: 0 0 10px 1px var(--highlight-color);
-  }
-
-  #contact-form-button:active {
-    transform: scale(0.9);
-    box-shadow: 0 0 10px 1px var(--highlight-color);
-  }
-
 }
-
-
-@media (max-width: 768px) {
-
-}
-

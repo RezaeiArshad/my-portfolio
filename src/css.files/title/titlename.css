@@ -23,6 +23,13 @@
   border-radius: 50%;
 }
 
+#arrow-svg {
+  fill: var(--vired-color);
+  height: 200px;
+  position: absolute;
+  left: 33%;
+  z-index: -3;
+}
 
 @media (max-width: 768px) {
   #title-name-svg {
@@ -72,10 +79,7 @@
     transform: scale(0.95);
   }
 
-  #arrow-svg {
-    fill: var(--vired-color);
-    margin-right: auto;
-  }
+
   
 }
 
