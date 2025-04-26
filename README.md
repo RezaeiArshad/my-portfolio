@@ -1,12 +1,15 @@
-# React + Vite
+# My portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Most important site for every programmer.
 
-Currently, two official plugins are available:
+And I tried to create a good one , It has a light mode and a different layout for mobile use 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Screenshot 2025-04-26 220658](https://github.com/user-attachments/assets/86bd53b1-31b2-42ef-aab4-4615e5af004e)
+this dark mode on laptop
 
-## Expanding the ESLint configuration
+![Screenshot 2025-04-26 220802](https://github.com/user-attachments/assets/054591b0-681d-47f4-af27-1d258cf79584)
+and this is light mode on mobile
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+here's the link to deployed version on vercel
+https://my-portfolio-six-delta-41.vercel.app/
