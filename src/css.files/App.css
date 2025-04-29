@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:ital,wght@0,600;1,600&display=swap');
+
+
 :root {
   --background-color: #000000;
   --forground-color: gray;
@@ -27,7 +30,6 @@ section {
 
 #root {
   width: 100%;
-  
 }
 
 .hidden {
@@ -85,8 +87,6 @@ body {
   text-align: center;
   margin-bottom: 30px;
 }
-
-
 
 .fadein {
   animation: fadein 0.2s ease;

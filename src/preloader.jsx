@@ -1,29 +1,4 @@
 import imageMe from "./projects/photo1742210095.jpeg"
-import imageClock from "./projects/425689123-7e93652b-ef23-4b26-bd21-ce890a3e68da.png" 
-import imageCalculator from "./projects/Screenshot 2025-04-04 201521.png"
-import imageDrum from "./projects/Screenshot 2025-04-05 125921.png"
-import imageQuote from "./projects/Screenshot 2025-04-05 130701.png"
-import imageMarkdown from "./projects/Screenshot 2025-04-05 131344.png"
-import imageBiology from "./projects/Screenshot 2025-04-05 124835.png"
-import imageValidator from "./projects/validatorpic.png"
-import imageProduct from "./projects/productlanding.png"
-import imagePokemon from "./projects/pokemonpic.png"
-import imageCash from "./projects/cashpic.png"
-import imageRunner from "./projects/runnerpic.png"
-import imageGaming from "./projects/gamingpic.png"
-import imageBook from "./projects/bookpic.png"
-import imagePhone from "./projects/phonepic.png"
-import imageStatistical from "./projects/statisticalpic.png"
-import imageSorter from "./projects/sorterpic.png"
-import imageSpam from "./projects/spampic.png"
-import imageNumeral from "./projects/romanpic.png"
-import imageTODO from "./projects/todopic.png"
-import imageRedbull from "./projects/redbullpic.png"
-import imageWatch from "./projects/watchpic.png"
-import imagePalindrome from "./projects/palindromepic.png"
-import imageFueled from "./projects/fueledpic.png"
-import imageDungeon from "./projects/dungeonpic.png"
-import imageHouse from "./projects/housepic.jpg"
 import imageBootstrap from "./assets/bootstrappic.png"
 import imageJavascript from "./assets/javascriptpic.png"
 import imageJquery from "./assets/jquerypic.png"
@@ -49,31 +24,6 @@ const Preloader = () => {
         
         const imagePaths = [
          imageMe,
-         imageClock,
-         imageCalculator,
-         imageDrum,
-         imageQuote,
-         imageMarkdown,
-         imageBiology,
-         imageValidator,
-         imageProduct,
-         imagePokemon,
-         imageCash,
-         imageRunner,
-         imageGaming,
-         imageHouse,
-         imageBook,
-         imagePhone,
-         imageStatistical,
-         imageSorter,
-         imageSpam,
-         imageNumeral,
-         imageTODO,
-         imageRedbull,
-         imageWatch,
-         imagePalindrome,
-         imageFueled,
-         imageDungeon,
          imageBootstrap,
          imageJavascript,
          imageJquery,

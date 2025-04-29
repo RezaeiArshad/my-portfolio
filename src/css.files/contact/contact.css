@@ -27,14 +27,16 @@
   transform: scale(1.1);
   fill: var(--highlight-color);
 }
-#github-icon-contact {
+#resume-icon-contact {
   fill: var(--forground-color);
   transition: all 0.3s ease;
+  width: 16px;
+  height: 16px;
   position: relative;
   bottom: 1px;
   transition: all 0.2s ease;
 }
-#github-icon-contact:hover, #github-icon-contact:active {
+#resume-icon-contact:hover, #resume-icon-contact:active {
   transform: scale(1.1);
   fill: var(--highlight-color);
 }

@@ -13,7 +13,6 @@ function TitleName() {
         {isMobile ? (
           <div id="title-name">
             <div className="mt-auto mb-auto p-0 col-10 offset-1">
-              {dotsSvg}
               <motion.h3
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -24,7 +23,6 @@ function TitleName() {
               >
                 Hello there, I'm -
               </motion.h3>
-
               <motion.h1
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}

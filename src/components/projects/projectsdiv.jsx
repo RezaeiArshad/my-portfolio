@@ -25,16 +25,16 @@ import imageWatch from "../../projects/watchpic.png"
 import imagePalindrome from "../../projects/palindromepic.png"
 import imageFueled from "../../projects/fueledpic.png"
 import imageDungeon from "../../projects/dungeonpic.png"
-import imageHouse from "../../projects/housepic.jpg"
+import imageF1 from "../../projects/f1pic.jpg"
 
 
 const projects = [
   {
-    projectName: "maped",
+    projectName: "MyF1",
     projectType: "web-app",
-    projectImage: imageHouse,
+    projectImage: imageF1,
     projectFrame: "typescript react",
-    projectDescription: "A web app to create constructional plans for any building by only providing general details"
+    projectDescription: "A web app to provide access to formula 1's races for free using OpenF1's API"
   },
   {
     projectName: "25 + 5 clock",
@@ -242,9 +242,9 @@ function ProjectsDiv() {
               <a
                 key={index}
                 target="_blank"
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: "none"}}
                 href={project.projectLink}
-                className="col-12"
+                className="col-8 offset-2 project-a d-block"
               >
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
@@ -256,10 +256,10 @@ function ProjectsDiv() {
                   }}
                   className={
                     project.projectType === "mini-project"
-                      ? "projects-project col-10 offset-1 mini-project"
+                      ? "projects-project col-12 mini-project"
                       : project.projectType === "practice-project"
-                      ? "projects-project col-10 offset-1 practice-project"
-                      : "projects-project col-10 offset-1 app-project"
+                      ? "projects-project col-12 practice-project"
+                      : "projects-project col-12 app-project"
                   }
                 >
                   <div
@@ -339,7 +339,7 @@ function ProjectsDiv() {
                           className="projects-project-img"
                           src={project.projectImage}
                           alt={`A picture of ${project.projectName}`}
-
+                          loading="lazy"
                         />  
                       
                     </motion.div>
